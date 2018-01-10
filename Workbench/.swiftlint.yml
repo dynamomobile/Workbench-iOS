@@ -1,0 +1,10 @@
+disabled_rules:
+ - trailing_whitespace
+ - todo
+ - identifier_name
+ - type_name
+
+excluded:
+ - fastlane
+ - Carthage
+ - Pods
