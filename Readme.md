@@ -13,9 +13,9 @@ Various parts make use of a couple general convinient helpers.
 
 ## Classes
 
-• AnimatedCheckmarkView, can be used to make other animated symbols
-• ResponseButton, alternative UIButton that will show border response on touches
-• SlideSegue, 4 way slide segues
+* AnimatedCheckmarkView, can be used to make other animated symbols
+* ResponseButton, alternative UIButton that will show border response on touches
+* SlideSegue, 4 way slide segues
 
 ## LaunchScreen
 
