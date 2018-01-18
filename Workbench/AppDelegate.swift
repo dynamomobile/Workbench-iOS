@@ -21,6 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func application(_ app: UIApplication,
+                     open url: URL,
+                     options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
+
+        AppSchemeData.shared.update(url: url)
+
+        return true
+    }
+
     func applicationWillResignActive(_ application: UIApplication) {
     }
 

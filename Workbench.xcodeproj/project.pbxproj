@@ -23,6 +23,7 @@
 		3A8AF60C1FDFCF9A0037B02B /* Strings.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A8AF60B1FDFCF9A0037B02B /* Strings.json */; };
 		3A8AF60E1FDFD3B50037B02B /* Floats.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A8AF60D1FDFD3B50037B02B /* Floats.json */; };
 		3A9E1D751FD69D3D0020954A /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9E1D741FD69D3D0020954A /* Data+Extensions.swift */; };
+		3ABE5DF22010EF2800C1EAB2 /* AppSchemeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABE5DF12010EF2800C1EAB2 /* AppSchemeData.swift */; };
 		3AD4C52E1FB1F383005353C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD4C52D1FB1F383005353C9 /* AppDelegate.swift */; };
 		3AD4C5301FB1F383005353C9 /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD4C52F1FB1F383005353C9 /* DownloadViewController.swift */; };
 		3AD4C5331FB1F383005353C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD4C5311FB1F383005353C9 /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 		3A8AF60B1FDFCF9A0037B02B /* Strings.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Strings.json; sourceTree = "<group>"; };
 		3A8AF60D1FDFD3B50037B02B /* Floats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Floats.json; sourceTree = "<group>"; };
 		3A9E1D741FD69D3D0020954A /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		3ABE5DF12010EF2800C1EAB2 /* AppSchemeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSchemeData.swift; sourceTree = "<group>"; };
 		3AD4C52A1FB1F383005353C9 /* Workbench.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workbench.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD4C52D1FB1F383005353C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AD4C52F1FB1F383005353C9 /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				3AF884112003C5E7009900B7 /* ResponseButton.swift */,
 				3A0900F62004C2A200804F98 /* SlideSegue.swift */,
 				3AD4C5481FB33164005353C9 /* AnimatedCheckmarkView.swift */,
+				3ABE5DF12010EF2800C1EAB2 /* AppSchemeData.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				3AD4C5401FB1F498005353C9 /* NetworkOperation.swift in Sources */,
 				3A8AF6001FDE9BC00037B02B /* Float+Extensions.swift in Sources */,
 				3A0900F72004C2A200804F98 /* SlideSegue.swift in Sources */,
+				3ABE5DF22010EF2800C1EAB2 /* AppSchemeData.swift in Sources */,
 				3A8AF60A1FDEC56F0037B02B /* AssociatedViewController.swift in Sources */,
 				3AD4C54D1FB33C92005353C9 /* DispatchQueue+Extensions.swift in Sources */,
 				3AD4C5441FB20ABF005353C9 /* AppConfig.swift in Sources */,

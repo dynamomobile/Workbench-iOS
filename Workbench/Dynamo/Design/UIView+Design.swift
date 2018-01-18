@@ -200,7 +200,7 @@ extension UIView {
             return ""
         }
         set {
-            self.layer.borderColor = UIColor.colorBy(name: newValue).cgColor
+            self.layer.borderColor = UIColor.colorBy(name: newValue)?.cgColor
         }
     }
 
