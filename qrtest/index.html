@@ -23,9 +23,6 @@
     <div id="option2_div" class="option">
       <span id="option2_label">Option</span>: <input id="option2" type="checkbox">
     </div>
-    <div class="option">
-      <button type="button" onclick="update()">Update</button>
-    </div>
   </div>
   <div class="column">
     <div id="qrcode" class="qrcode"></div>
@@ -92,6 +89,11 @@ function update(reset=false) {
 }
 
 update(true);
+
+$('#field1').on("input", function() { update(); });
+$('#field2').on("input", function() { update(); });
+$('#option1').change(function() { update(); })
+$('#option2').change(function() { update(); })
 
 </script>
 </body>
