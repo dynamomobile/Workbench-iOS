@@ -11,6 +11,7 @@
 		3A0BA1831FE12FDD004CB22F /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0BA1821FE12FDD004CB22F /* UIViewController+Extensions.swift */; };
 		3A0BA1851FE1319D004CB22F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0BA1841FE1319D004CB22F /* MainViewController.swift */; };
 		3A3D5AB31FED438900E5AAFF /* StateMachineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D5AB21FED438900E5AAFF /* StateMachineViewController.swift */; };
+		3A3E037120162B45008C72CE /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3E037020162B45008C72CE /* MainCollectionViewCell.swift */; };
 		3A487FDB2004F7010047C354 /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A487FD92004F7010047C354 /* MoreViewController.xib */; };
 		3A487FE22004FECD0047C354 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A487FE12004FECD0047C354 /* MoreViewController.swift */; };
 		3A8AF5F51FDE96F20037B02B /* UIView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8AF5F31FDE96F20037B02B /* UIView+Design.swift */; };
@@ -48,6 +49,7 @@
 		3A0BA1821FE12FDD004CB22F /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		3A0BA1841FE1319D004CB22F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3A3D5AB21FED438900E5AAFF /* StateMachineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineViewController.swift; sourceTree = "<group>"; };
+		3A3E037020162B45008C72CE /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		3A3E20191FE16C25001CD0A6 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		3A487FD92004F7010047C354 /* MoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
 		3A487FE12004FECD0047C354 /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				3AD5F6331FDAC5FB00EC5EAF /* Workbench-Bridging-Header.h */,
 				3AD4C52D1FB1F383005353C9 /* AppDelegate.swift */,
 				3A0BA1841FE1319D004CB22F /* MainViewController.swift */,
+				3A3E037020162B45008C72CE /* MainCollectionViewCell.swift */,
 				3A487FE3200511090047C354 /* Download */,
 				3A487FD72004F6C60047C354 /* ContextView */,
 				3A487FE4200511200047C354 /* Associated */,
@@ -344,6 +347,7 @@
 				3AD4C5441FB20ABF005353C9 /* AppConfig.swift in Sources */,
 				3AD4C55A1FB4995F005353C9 /* NSObject+Extensions.swift in Sources */,
 				3A8AF6021FDEA7B30037B02B /* ContextViewController.swift in Sources */,
+				3A3E037120162B45008C72CE /* MainCollectionViewCell.swift in Sources */,
 				3AD4C52E1FB1F383005353C9 /* AppDelegate.swift in Sources */,
 				3A0BA1831FE12FDD004CB22F /* UIViewController+Extensions.swift in Sources */,
 				3AD4C54B1FB33B23005353C9 /* CG+Extensions.swift in Sources */,
