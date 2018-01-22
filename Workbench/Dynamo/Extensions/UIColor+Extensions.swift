@@ -39,4 +39,22 @@ extension UIColor {
         return lookup[name] ?? defaultColor
     }
 
+    func lighten(amount: CGFloat) -> UIColor {
+        var (r, g, b, a) = (CGFloat(0), CGFloat(0), CGFloat(0), CGFloat(0))
+        getRed(&r, green: &g, blue: &b, alpha: &a)
+        return UIColor(red: r + amount*(1.0 - r),
+                       green: g + amount*(1.0 - g),
+                       blue: b + amount*(1.0 - b),
+                       alpha: a)
+    }
+
+    func darken(amount: CGFloat) -> UIColor {
+        var (r, g, b, a) = (CGFloat(0), CGFloat(0), CGFloat(0), CGFloat(0))
+        getRed(&r, green: &g, blue: &b, alpha: &a)
+        return UIColor(red: r * (1.0 - amount),
+                       green: g * (1.0 - amount),
+                       blue: b * (1.0 - amount),
+                       alpha: a)
+    }
+
 }

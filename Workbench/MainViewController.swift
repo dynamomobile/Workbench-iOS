@@ -48,6 +48,13 @@ class MainViewController: UICollectionViewController {
             cell.design = button_color
             cell.label.design = text_color
             cell.label.designTitle = title
+            let backgroundView = UIView(frame: CGRect(x: 0,
+                                                      y: 0,
+                                                      width: cell.contentView.frame.width,
+                                                      height: cell.contentView.frame.height))
+            backgroundView.design = button_color
+            backgroundView.backgroundColor = backgroundView.backgroundColor?.lighten(amount: 0.7)
+            cell.selectedBackgroundView = backgroundView
             return cell
         }
         return UICollectionViewCell()
