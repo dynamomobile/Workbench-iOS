@@ -47,10 +47,6 @@ class AssociatedViewController: UIViewController {
         ])
 
         view.updateContext()
-
-        if let color = AppSchemeData.shared.lookupColorBy(name: "color") {
-            view.backgroundColor = color
-        }
     }
 
     func dummy() -> Dummy {

@@ -7,7 +7,8 @@ class MainViewController: UICollectionViewController {
         ("title_download", "download", "red", "white"),
         ("title_context", "context", "green", "black"),
         ("title_associated", "associated", "blue", "white"),
-        ("title_statemachine", "statemachine", "yellow", "black")
+        ("title_statemachine", "statemachine", "yellow", "black"),
+        ("title_qrtest", "qrtest", "magenta", "white")
     ]
 
     override func viewDidLoad() {

@@ -1,100 +1,98 @@
 <html>
-<head>
-<script type="text/javascript" src="jquery.min.js"></script>
-<script type="text/javascript" src="qrcode.js"></script>
-<link rel="stylesheet" href="makeup-test.css">
-</head>
-<body>
-<div class="row">
-  <div class="column left">
-    <select id="feature" onchange="change(this.value, true)">
-      <option value="demo1">Demo 1</option>
-      <option value="demo2">Demo 2</option>
-    </select>
-    <div class="option">
-      <span id="field1_label">Field</span>: <input id="field1" type="text" value="" style="width: 110px">
-    </div>
-    <div id="field2_div" class="option">
-      <span id="field2_label">Field</span>: <input id="field2" type="text" value="" style="width: 110px">
-    </div>
-    <div id="option1_div" class="option">
-      <span id="option1_label">Option</span>: <input id="option1" type="checkbox">
-    </div>
-    <div id="option2_div" class="option">
-      <span id="option2_label">Option</span>: <input id="option2" type="checkbox">
-    </div>
-  </div>
-  <div class="column">
-    <div id="qrcode" class="qrcode"></div>
-    <div id="string" class="string"></div>
-  </div>
-</div>
-<script>
+    <head>
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script type="text/javascript" src="qrcode.js"></script>
+        <link rel="stylesheet" href="makeup-test.css"/>
+    </head>
+    <body>
+        <div class="row">
+            <div class="column left">
+                <select id="feature" onchange="change(this.value, true)">
+                    <option value="demo1">Demo 1</option>
+                    <option value="demo2">Demo 2</option>
+                </select>
+                <div class="option">
+                    <span id="field1_label">Field</span>: <input id="field1" type="text" value="" style="width: 110px">
+                        </div>
+                <div id="field2_div" class="option">
+                    <span id="field2_label">Field</span>: <input id="field2" type="text" value="" style="width: 110px">
+                        </div>
+                <div id="option1_div" class="option">
+                    <span id="option1_label">Option</span>: <input id="option1" type="checkbox">
+                        </div>
+                <div id="option2_div" class="option">
+                    <span id="option2_label">Option</span>: <input id="option2" type="checkbox">
+                        </div>
+            </div>
+            <div class="column">
+                <div id="qrcode" class="qrcode"></div>
+                <div id="string" class="string"></div>
+            </div>
+        </div>
+        <script>
 
-var uri_scheme = "workbench-test";
-var uri_command = "set";
+            var uri_scheme = "workbench-test";
+            var uri_command = "set";
 
-var qrcode = new QRCode($("#qrcode")[0], {
-  width: 256,
-  height: 256
-});
+            var qrcode = new QRCode($("#qrcode")[0], { width: 256, height: 256 });
 
-function setstr(str) {
-  str = uri_scheme + "://" + uri_command + "?" + str;
-  qrcode.makeCode(str);
-  $("#string").text(str);
-}
+            function setstr(str) {
+                str = uri_scheme + "://" + uri_command + "?" + str;
+                qrcode.makeCode(str);
+                $("#string").text(str);
+            }
 
-function change(val, reset=false) {
+            function change(val, reset=false) {
 
-  if ("demo1" == val) {
+                if ("demo1" == val) {
 
-    if (reset) {
-      $("#field1_label").text( "Color" );
-      $("#field2_label").text( "String" );
-      $("#option1_label").text( "Fast" );
-      $("#field1").val("");
-      $("#field2").val("");
-      $("#option1").attr('checked', false);;
-    }
+                    if (reset) {
+                        $("#field1_label").text( "Color" );
+                        $("#field2_label").text( "String" );
+                        $("#option1_label").text( "Fast" );
+                        $("#field1").val("");
+                        $("#field2").val("");
+                        $("#option1").attr('checked', false);
+                    }
 
-    $("#field2_div").show();
-    $("#option1_div").show();
-    $("#option2_div").hide();
-    str = "color=" + encodeURIComponent($("#field1").val()) +
-      "&fast=" + ($("#option1").attr("checked") ? "1" : "0");
-    if ($("#field2").val().length > 0) {
-      str += "&string=" + encodeURIComponent($("#field2").val());
-    }
-    setstr(str);
+                    $("#field2_div").show();
+                    $("#option1_div").show();
+                    $("#option2_div").hide();
+                    str = "color=" + encodeURIComponent($("#field1").val()) +
+                    "&fast=" + ($("#option1").attr("checked") ? "1" : "0");
+                    if ($("#field2").val().length > 0) {
+                        str += "&string=" + encodeURIComponent($("#field2").val());
+                    }
+                    setstr(str);
 
-  } else if ("demo2" == val) {
+                } else if ("demo2" == val) {
 
-    if (reset) {
-      $("#field1_label").text( "String" );
-      $("#field1").val("");
-    }
+                    if (reset) {
+                        $("#field1_label").text( "String" );
+                        $("#field1").val("");
+                    }
 
-    $("#field2_div").hide();
-    $("#option1_div").hide();
-    $("#option2_div").hide();
-    str = "string=" + encodeURIComponent($("#field1").val());
-    setstr(str);
+                    $("#field2_div").hide();
+                    $("#option1_div").hide();
+                    $("#option2_div").hide();
+                    str = "string=" + encodeURIComponent($("#field1").val());
+                    setstr(str);
 
-  }
-}
+                }
+            }
 
-function update(reset=false) {
-  change($("#feature").val(),reset)
-}
+            function update(reset=false) {
+                change($("#feature").val(),reset);
+            }
 
-update(true);
+            update(true);
 
-$('#field1').on("input", function() { update(); });
-$('#field2').on("input", function() { update(); });
-$('#option1').change(function() { update(); })
-$('#option2').change(function() { update(); })
+            $('#field1').on("input", function() { update(); });
+            $('#field2').on("input", function() { update(); });
+            $('#option1').change(function() { update(); });
+            $('#option2').change(function() { update(); });
 
-</script>
-</body>
+        </script>
+    </body>
 </html>
+

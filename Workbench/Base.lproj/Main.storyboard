@@ -634,11 +634,56 @@
                         <segue destination="BYZ-38-t0r" kind="show" identifier="download" id="1cf-dn-uyw"/>
                         <segue destination="brF-lc-bNw" kind="show" identifier="context" id="yBp-yr-gUb"/>
                         <segue destination="sfT-2J-QYl" kind="show" identifier="associated" id="vRe-5d-pdw"/>
+                        <segue destination="5Nu-SB-MIN" kind="show" identifier="qrtest" id="cF3-ab-jUY"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S3r-et-IEI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1554" y="1011"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="BLz-nZ-fdD">
+            <objects>
+                <viewController id="5Nu-SB-MIN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QGo-FR-4YE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5Q-aj-VNh">
+                                <rect key="frame" x="20" y="20" width="46" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Uco-0d-aKr"/>
+                                    <constraint firstAttribute="width" constant="46" id="y1m-6p-3hx"/>
+                                </constraints>
+                                <state key="normal" title="⨉"/>
+                                <connections>
+                                    <segue destination="Prc-r0-3vi" kind="unwind" unwindAction="unwindToMainViewControllerWithSegue:" id="r2g-0N-XHB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cff-7d-Axn">
+                                <rect key="frame" x="183" y="32" width="48" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="designTitle" value="title_qrtest"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cff-7d-Axn" firstAttribute="top" secondItem="9Np-c1-Mmd" secondAttribute="top" constant="12" id="PN5-5i-JfW"/>
+                            <constraint firstItem="cff-7d-Axn" firstAttribute="centerX" secondItem="QGo-FR-4YE" secondAttribute="centerX" id="VzO-L5-RUA"/>
+                            <constraint firstItem="P5Q-aj-VNh" firstAttribute="leading" secondItem="9Np-c1-Mmd" secondAttribute="leading" constant="20" id="fuv-nQ-PBe"/>
+                            <constraint firstItem="P5Q-aj-VNh" firstAttribute="top" secondItem="9Np-c1-Mmd" secondAttribute="top" id="ksi-fQ-SXP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9Np-c1-Mmd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KTu-WO-ghm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Prc-r0-3vi" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-964" y="2397"/>
         </scene>
         <!--State Machine View Controller-->
         <scene sceneID="aXP-EX-fJe">
