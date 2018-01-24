@@ -2,6 +2,8 @@ import Foundation
 
 extension Float {
 
+    static let goldenRatio = 1.6180339887498948482
+
     static var lookup: [String: Float] = loadFloatsJSON()
 
     static func loadFloatsJSON() -> [String: Float] {

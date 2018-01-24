@@ -641,10 +641,10 @@
             </objects>
             <point key="canvasLocation" x="-1554" y="1011"/>
         </scene>
-        <!--View Controller-->
+        <!--Test View Controller-->
         <scene sceneID="BLz-nZ-fdD">
             <objects>
-                <viewController id="5Nu-SB-MIN" sceneMemberID="viewController">
+                <viewController id="5Nu-SB-MIN" customClass="QRTestViewController" customModule="Workbench" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QGo-FR-4YE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -669,6 +669,14 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="designTitle" value="title_qrtest"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="igt-7Y-hFC">
+                                <rect key="frame" x="91" y="558" width="94" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="design" value="red"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -679,11 +687,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Np-c1-Mmd"/>
                     </view>
+                    <connections>
+                        <outlet property="ballView" destination="igt-7Y-hFC" id="WSQ-x1-srO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KTu-WO-ghm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Prc-r0-3vi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-964" y="2397"/>
+            <point key="canvasLocation" x="-965.21739130434787" y="2396.739130434783"/>
         </scene>
         <!--State Machine View Controller-->
         <scene sceneID="aXP-EX-fJe">
