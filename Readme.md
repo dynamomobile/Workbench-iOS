@@ -45,7 +45,7 @@ The download demo show a couple of different things.
 
 The Context demo show a lean way to populate UI things like UILabel
 
-The Context concept is a way to attach data on UIView elements and the IB Context field. The Context works like a dictionay. Accessing entries are handled through the Context field in IB. Things to notice in the code, setting context data with `view.setFullContext([])`, call of `view.updateContext()` in `viewDidLoad()` that updates all context entries in the view hierarchy. Also have a look at the 'Context' field in IB.
+The Context concept is a way to attach data on UIView elements and the IB Context field. The Context works like a dictionay. Accessing entries are handled through the Context field in IB. Things to notice in the code, setting context data with `view.setFullContext([])`. Also have a look at the 'Context' field in IB.
 
 This part also make use of a simplified JSON parsing. See `data?.JSON()` (and `Data.JSON([])`)
 

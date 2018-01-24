@@ -17,8 +17,6 @@ class ContextViewController: UIViewController, UITableViewDelegate, UITableViewD
             "title": "Context"
         ])
 
-        view.updateContext()
-
         if let url = URL(string: "http://api.open-notify.org/astros.json") {
             NetworkOperation(request: URLRequest(url: url)) { (data, response, _) in
                 if let response = response as? HTTPURLResponse {
@@ -44,7 +42,6 @@ class ContextViewController: UIViewController, UITableViewDelegate, UITableViewD
                     "one": [ "two": [ "answer": "42" ] ],
                     "more_label": "Don't Panic!"
                     ])
-                segue.destination.view.updateContext()
             }
         }
     }
@@ -58,7 +55,6 @@ class ContextViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContextTableViewCell")
         cell?.setFullContext(peopleInSpace[indexPath.row])
-        cell?.updateContext()
         return cell!
     }
 

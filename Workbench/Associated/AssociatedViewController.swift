@@ -45,8 +45,6 @@ class AssociatedViewController: UIViewController {
             "title": "Associated",
             "dummy": "empty"
         ])
-
-        view.updateContext()
     }
 
     func dummy() -> Dummy {
@@ -62,12 +60,10 @@ class AssociatedViewController: UIViewController {
     @IBAction func down(_ sender: Any) {
         dummy().num = dummy().num - 1
         view.setContextValue("\(dummy().num)", forKey: "dummy")
-        view.updateContext()
     }
 
     @IBAction func up(_ sender: Any) {
         dummy().num = dummy().num + 1
         view.setContextValue("\(dummy().num)", forKey: "dummy")
-        view.updateContext()
     }
 }
