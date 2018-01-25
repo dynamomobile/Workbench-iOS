@@ -61,6 +61,4 @@ Work in progress. Should add some UI elements etc to show it working, maybe even
 
 QR Test is a small demo of using a simple html5 based QR code generator to supply ie. test or debug data into an app. Open the `qrtest/index.html` in a browser and point the iPhone standard camera at the QR Code. The Workbench app should open and the values should have been supplied. Colors can be either hexadecimal like `00ff00` or ie. a name like `blue`. The string field respond to `big` and `small`. Fast is the speed of the ball in the QR Test screen. The QR Test screen only updates when opening so if it is aleady opened, close and open again to apply any changes.
 
--
-
 _The word **QR Code** is registered trademark of DENSO WAVE INCORPORATED [FAQ](http://www.denso-wave.com/qrcode/faqpatent-e.html)_
