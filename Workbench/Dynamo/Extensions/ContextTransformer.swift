@@ -10,6 +10,12 @@ extension String: ContextTransformer {
     }
 }
 
+extension NSString: ContextTransformer {
+    func toString(extra: String?) -> String {
+        return String(self)
+    }
+}
+
 extension Date: ContextTransformer {
     func toString(extra: String?) -> String {
         if let extra = extra {
@@ -25,11 +31,5 @@ extension NSDate: ContextTransformer {
             return DateFormatter.reusableBy(format: extra).string(from: self as Date)
         }
         return description
-    }
-}
-
-extension NSString: ContextTransformer {
-    func toString(extra: String?) -> String {
-        return String(self)
     }
 }
