@@ -39,7 +39,8 @@ class ContextViewController: UIViewController, UITableViewDelegate, UITableViewD
             segue.destination.view.setFullContext([
                 "title": "More ...",
                 "one": [ "two": [ "answer": "42" ] ],
-                "more_label": "Don't Panic!"
+                "more_label": "Don't Panic!",
+                "date": Date()
             ])
         }
     }
