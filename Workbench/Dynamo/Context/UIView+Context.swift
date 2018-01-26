@@ -44,22 +44,40 @@ extension UIView {
         subviews.forEach { (view) in
             view.updateContext()
         }
-        if let key = context {
-            if self.isKind(of: UILabel.self), let label = self as? UILabel {
-                var chain = key.components(separatedBy: ".")
-                if chain.count > 1 {
-                    var dict = contextValue(forKey: chain[0]) as? [String: Any]
-                    if dict != nil {
-                        chain.removeFirst()
-                        while dict != nil, chain.count > 1 {
-                            dict = (dict?[ chain[0] ]) as? [String: Any]
-                            chain.removeFirst()
-                        }
-                        label.text = dict?[ chain[0] ] as? String
-                    }
+        guard let context = context else {
+            return
+        }
+        var parts = context.components(separatedBy: "|")
+        guard parts.count > 0 else {
+            return
+        }
+        func put(label: UILabel, value: Any?, extra: String?) {
+            if let string = value as? String {
+                label.text = string
+            } else if let date = value as? Date {
+                if let extra = extra {
+                    label.text = DateFormatter.reusableBy(format: extra).string(from: date)
                 } else {
-                    label.text = contextValue(forKey: key) as? String
+                    label.text = date.description
                 }
+            }
+        }
+        let key = parts[0]
+        let extra = parts.count > 1 ? parts[1] : nil
+        if self.isKind(of: UILabel.self), let label = self as? UILabel {
+            var chain = key.components(separatedBy: ".")
+            if chain.count > 1 {
+                var dict = contextValue(forKey: chain[0]) as? [String: Any]
+                if dict != nil {
+                    chain.removeFirst()
+                    while dict != nil, chain.count > 1 {
+                        dict = (dict?[ chain[0] ]) as? [String: Any]
+                        chain.removeFirst()
+                    }
+                    put(label: label, value: dict?[ chain[0] ], extra: extra)
+                }
+            } else {
+                put(label: label, value: contextValue(forKey: key), extra: extra)
             }
         }
     }
