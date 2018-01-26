@@ -567,7 +567,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="context" value="date|yyyy-MM-dd"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="context" value="date|EEEE"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
