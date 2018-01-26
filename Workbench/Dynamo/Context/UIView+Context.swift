@@ -51,28 +51,11 @@ extension UIView {
         guard parts.count > 0 else {
             return
         }
-        func put(label: UILabel, value: Any?, extra: String?) {
-            if let contextValue = value as? ContextTransformer {
-                label.text = contextValue.toString(extra: extra)
-            }
-        }
         let key = parts[0]
         let extra = parts.count > 1 ? parts[1] : nil
-        if self.isKind(of: UILabel.self), let label = self as? UILabel {
-            var chain = key.components(separatedBy: ".")
-            if chain.count > 1 {
-                var dict = contextValue(forKey: chain[0]) as? [String: Any]
-                if dict != nil {
-                    chain.removeFirst()
-                    while dict != nil, chain.count > 1 {
-                        dict = (dict?[ chain[0] ]) as? [String: Any]
-                        chain.removeFirst()
-                    }
-                    put(label: label, value: dict?[ chain[0] ], extra: extra)
-                }
-            } else {
-                put(label: label, value: contextValue(forKey: key), extra: extra)
-            }
+        if self.isKind(of: UILabel.self), let label = self as? UILabel,
+            let contextValue = contextValue(forKey: key) as? ContextTransformer {
+            label.text = contextValue.toString(extra: extra)
         }
     }
 

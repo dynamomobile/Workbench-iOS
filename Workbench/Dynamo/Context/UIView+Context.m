@@ -83,7 +83,7 @@ static NSMutableDictionary *globalContextDictionary = nil;
 {
     NSMutableDictionary *dict = objc_getAssociatedObject(self, DICT_KEY);
     if ([dict isKindOfClass:[NSMutableDictionary class]]) {
-        id obj = dict[key];
+        id obj = [dict valueForKeyPath:key];
         if (obj) {
             return obj;
         }

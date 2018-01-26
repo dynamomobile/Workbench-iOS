@@ -33,3 +33,9 @@ extension NSDate: ContextTransformer {
         return description
     }
 }
+
+extension NSNumber: ContextTransformer {
+    func toString(extra: String?) -> String {
+        return stringValue
+    }
+}
