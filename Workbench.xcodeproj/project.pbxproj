@@ -25,6 +25,7 @@
 		3A8AF60C1FDFCF9A0037B02B /* Strings.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A8AF60B1FDFCF9A0037B02B /* Strings.json */; };
 		3A8AF60E1FDFD3B50037B02B /* Floats.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A8AF60D1FDFD3B50037B02B /* Floats.json */; };
 		3A97B7BF201B2BDB001B2852 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97B7BE201B2BDB001B2852 /* DateFormatter+Extensions.swift */; };
+		3A97B7C1201B3A56001B2852 /* ContextTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97B7C0201B3A56001B2852 /* ContextTransformer.swift */; };
 		3A9E1D751FD69D3D0020954A /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9E1D741FD69D3D0020954A /* Data+Extensions.swift */; };
 		3ABE5DF22010EF2800C1EAB2 /* AppSchemeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABE5DF12010EF2800C1EAB2 /* AppSchemeData.swift */; };
 		3AD4C52E1FB1F383005353C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD4C52D1FB1F383005353C9 /* AppDelegate.swift */; };
@@ -70,6 +71,7 @@
 		3A8AF60B1FDFCF9A0037B02B /* Strings.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Strings.json; sourceTree = "<group>"; };
 		3A8AF60D1FDFD3B50037B02B /* Floats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Floats.json; sourceTree = "<group>"; };
 		3A97B7BE201B2BDB001B2852 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		3A97B7C0201B3A56001B2852 /* ContextTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextTransformer.swift; sourceTree = "<group>"; };
 		3A9E1D741FD69D3D0020954A /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		3ABE5DF12010EF2800C1EAB2 /* AppSchemeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSchemeData.swift; sourceTree = "<group>"; };
 		3AD4C52A1FB1F383005353C9 /* Workbench.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workbench.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -239,6 +241,7 @@
 				3AD4C5591FB4995F005353C9 /* NSObject+Extensions.swift */,
 				3A0BA1821FE12FDD004CB22F /* UIViewController+Extensions.swift */,
 				3A97B7BE201B2BDB001B2852 /* DateFormatter+Extensions.swift */,
+				3A97B7C0201B3A56001B2852 /* ContextTransformer.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				3AD4C5491FB33164005353C9 /* AnimatedCheckmarkView.swift in Sources */,
 				3A8AF5F71FDE97160037B02B /* UIColor+Extensions.swift in Sources */,
 				3AD4C5421FB20943005353C9 /* Debug.swift in Sources */,
+				3A97B7C1201B3A56001B2852 /* ContextTransformer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

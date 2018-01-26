@@ -52,14 +52,8 @@ extension UIView {
             return
         }
         func put(label: UILabel, value: Any?, extra: String?) {
-            if let string = value as? String {
-                label.text = string
-            } else if let date = value as? Date {
-                if let extra = extra {
-                    label.text = DateFormatter.reusableBy(format: extra).string(from: date)
-                } else {
-                    label.text = date.description
-                }
+            if let contextValue = value as? ContextTransformer {
+                label.text = contextValue.toString(extra: extra)
             }
         }
         let key = parts[0]

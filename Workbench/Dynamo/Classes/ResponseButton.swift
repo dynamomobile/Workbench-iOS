@@ -12,7 +12,8 @@ class ResponseButton: UIButton {
         addTarget(self, action: #selector(detectEvent(_:)), for: .allTouchEvents)
     }
 
-    @objc func detectEvent(_ sender: Any) {
+    @objc
+    func detectEvent(_ sender: Any) {
         DispatchQueue.main.async {
             if self.isHighlighted {
                 self.layer.opacity = self.layer.borderWidth > 0.0 ? 0.2 : 0.6
