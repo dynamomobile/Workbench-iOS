@@ -15,6 +15,9 @@
         <array key="Futura.ttc">
             <string>Futura-Medium</string>
         </array>
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Download View Controller-->
@@ -570,15 +573,37 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="context" value="date|EEEE"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9k-nM-IP4">
+                                <rect key="frame" x="186.33333333333334" y="171.33333333333334" width="41.666666666666657" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="context" value="intValue|[0x%08x]"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzg-rH-dKQ">
+                                <rect key="frame" x="185" y="201.33333333333334" width="44" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="context" value="floatValue|[%010.2f]"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="QxY-jA-s6u" firstAttribute="top" secondItem="cBq-AQ-mXH" secondAttribute="bottom" constant="40" id="2Dn-yT-T4t"/>
                             <constraint firstItem="QxY-jA-s6u" firstAttribute="centerX" secondItem="Nb4-dQ-MQi" secondAttribute="centerX" id="61q-Oo-Jfl"/>
+                            <constraint firstItem="yzg-rH-dKQ" firstAttribute="top" secondItem="Q9k-nM-IP4" secondAttribute="bottom" constant="10" id="6kr-wz-U49"/>
                             <constraint firstItem="3DJ-XD-eH7" firstAttribute="leading" secondItem="5S7-98-nhP" secondAttribute="leading" constant="20" id="7v3-px-oZf"/>
                             <constraint firstItem="5S7-98-nhP" firstAttribute="trailing" secondItem="SqM-Wq-aDC" secondAttribute="trailing" constant="20" id="8ZZ-Ka-H0L"/>
                             <constraint firstItem="cBq-AQ-mXH" firstAttribute="top" secondItem="5S7-98-nhP" secondAttribute="top" constant="12" id="Cxb-LX-po6"/>
+                            <constraint firstItem="Q9k-nM-IP4" firstAttribute="centerX" secondItem="Nb4-dQ-MQi" secondAttribute="centerX" id="OD2-uH-7kE"/>
+                            <constraint firstItem="yzg-rH-dKQ" firstAttribute="centerX" secondItem="Nb4-dQ-MQi" secondAttribute="centerX" id="XQb-7u-weH"/>
                             <constraint firstItem="8TZ-Zr-4bp" firstAttribute="top" secondItem="QxY-jA-s6u" secondAttribute="bottom" constant="10" id="YUy-km-0eC"/>
+                            <constraint firstItem="Q9k-nM-IP4" firstAttribute="top" secondItem="8TZ-Zr-4bp" secondAttribute="bottom" constant="10" id="Zgr-QO-qxf"/>
                             <constraint firstItem="cBq-AQ-mXH" firstAttribute="centerX" secondItem="Nb4-dQ-MQi" secondAttribute="centerX" id="diA-Mm-Tjf"/>
                             <constraint firstItem="5S7-98-nhP" firstAttribute="bottom" secondItem="SqM-Wq-aDC" secondAttribute="bottom" constant="20" id="fXM-3G-2Bg"/>
                             <constraint firstItem="8TZ-Zr-4bp" firstAttribute="centerX" secondItem="Nb4-dQ-MQi" secondAttribute="centerX" id="gSb-FI-uF9"/>
@@ -591,7 +616,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="66E-Mm-wl6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="6yj-ag-HbC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1388" y="474"/>
+            <point key="canvasLocation" x="1386.9565217391305" y="473.64130434782612"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="da0-TW-KNz">

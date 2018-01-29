@@ -36,6 +36,15 @@ extension NSDate: ContextTransformer {
 
 extension NSNumber: ContextTransformer {
     func toString(extra: String?) -> String {
+        if let extra = extra {
+            if extra.range(of: "%[0-9]*[.]{0,1}[0-9]*[fF]",
+                           options: .regularExpression,
+                           range: nil,
+                           locale: nil) != nil {
+                return String(format: extra, self.floatValue)
+            }
+            return String(format: extra, self.intValue)
+        }
         return stringValue
     }
 }

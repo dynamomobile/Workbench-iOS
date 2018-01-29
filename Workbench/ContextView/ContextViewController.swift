@@ -40,6 +40,8 @@ class ContextViewController: UIViewController, UITableViewDelegate, UITableViewD
                 "title": "More ...",
                 "one": [ "two": [ "answer": "42" ] ],
                 "more_label": "Don't Panic!",
+                "intValue": 0xff350012,
+                "floatValue": 398.23444554,
                 "date": Date()
             ])
         }
