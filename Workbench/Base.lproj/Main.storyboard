@@ -18,6 +18,9 @@
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
         </array>
+        <array key="Menlo.ttc">
+            <string>Menlo-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Download View Controller-->
@@ -766,14 +769,84 @@
                                     <constraint firstAttribute="height" constant="180" id="vlb-Fq-vmK"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mj5-tx-8PS">
+                                <rect key="frame" x="181.33333333333334" y="272" width="51.333333333333343" height="20"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="context" value="state"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyY-TD-frK">
+                                <rect key="frame" x="126.33333333333331" y="272" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Xe-yL-t2o">
+                                <rect key="frame" x="112" y="342" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="fy5-Yn-40u"/>
+                                    <constraint firstAttribute="height" constant="50" id="sHy-T7-c9k"/>
+                                </constraints>
+                                <state key="normal" title="A"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="roundedCornerRadius" value="5"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="design" value="red:white"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="NRJ-Gt-5CF" eventType="touchUpInside" id="EB4-kC-960"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfO-ss-M2y">
+                                <rect key="frame" x="182" y="342" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="7Yk-UL-LcM"/>
+                                    <constraint firstAttribute="height" constant="50" id="wNm-NY-rZd"/>
+                                </constraints>
+                                <state key="normal" title="B"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="roundedCornerRadius" value="5"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="design" value="green:black"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="NRJ-Gt-5CF" eventType="touchUpInside" id="4UQ-eg-K1E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oaI-dp-7ei">
+                                <rect key="frame" x="252" y="342" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="kDD-v8-D7b"/>
+                                    <constraint firstAttribute="width" constant="50" id="wg1-P7-ytG"/>
+                                </constraints>
+                                <state key="normal" title="C"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="roundedCornerRadius" value="5"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="design" value="blue:white"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="NRJ-Gt-5CF" eventType="touchUpInside" id="9q9-Sc-QfJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="mj5-tx-8PS" firstAttribute="centerX" secondItem="EVv-VT-cRn" secondAttribute="centerX" id="3kR-Eh-jdc"/>
+                            <constraint firstItem="cyY-TD-frK" firstAttribute="top" secondItem="PCw-oh-REz" secondAttribute="bottom" constant="20" id="AsA-qd-uhm"/>
                             <constraint firstItem="Ndp-HR-YJi" firstAttribute="trailing" secondItem="PCw-oh-REz" secondAttribute="trailing" constant="20" id="H04-Jz-R66"/>
                             <constraint firstItem="aBq-Wu-0oL" firstAttribute="top" secondItem="Ndp-HR-YJi" secondAttribute="top" constant="12" id="IJB-jf-ou3"/>
+                            <constraint firstItem="bfO-ss-M2y" firstAttribute="top" secondItem="2Xe-yL-t2o" secondAttribute="top" id="UOe-er-miP"/>
                             <constraint firstItem="aBq-Wu-0oL" firstAttribute="centerX" secondItem="EVv-VT-cRn" secondAttribute="centerX" id="W5a-kw-PL8"/>
+                            <constraint firstItem="mj5-tx-8PS" firstAttribute="top" secondItem="PCw-oh-REz" secondAttribute="bottom" constant="20" id="XlH-sC-IPc"/>
+                            <constraint firstItem="bfO-ss-M2y" firstAttribute="centerX" secondItem="EVv-VT-cRn" secondAttribute="centerX" id="dBJ-gk-n0S"/>
                             <constraint firstItem="PCw-oh-REz" firstAttribute="leading" secondItem="Ndp-HR-YJi" secondAttribute="leading" constant="20" id="ejq-fZ-CPF"/>
+                            <constraint firstItem="bfO-ss-M2y" firstAttribute="top" secondItem="mj5-tx-8PS" secondAttribute="bottom" constant="50" id="hsf-MK-gpS"/>
+                            <constraint firstItem="mj5-tx-8PS" firstAttribute="leading" secondItem="cyY-TD-frK" secondAttribute="trailing" constant="10" id="hvj-1i-Jen"/>
+                            <constraint firstItem="oaI-dp-7ei" firstAttribute="top" secondItem="2Xe-yL-t2o" secondAttribute="top" id="j6f-Wd-c9r"/>
+                            <constraint firstItem="oaI-dp-7ei" firstAttribute="leading" secondItem="bfO-ss-M2y" secondAttribute="trailing" constant="20" id="kJe-Ef-PA3"/>
                             <constraint firstItem="PCw-oh-REz" firstAttribute="top" secondItem="Udj-az-bJT" secondAttribute="bottom" constant="8" id="kUr-dm-laX"/>
+                            <constraint firstItem="bfO-ss-M2y" firstAttribute="leading" secondItem="2Xe-yL-t2o" secondAttribute="trailing" constant="20" id="nwO-iW-QSl"/>
                             <constraint firstItem="Udj-az-bJT" firstAttribute="top" secondItem="Ndp-HR-YJi" secondAttribute="top" id="s3a-JE-GvK"/>
                             <constraint firstItem="Udj-az-bJT" firstAttribute="leading" secondItem="Ndp-HR-YJi" secondAttribute="leading" constant="16" id="xHq-dR-lo8"/>
                         </constraints>
@@ -786,7 +859,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5W8-3M-ai5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="b9V-3J-8SI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="2173"/>
+            <point key="canvasLocation" x="0.0" y="2172.554347826087"/>
         </scene>
     </scenes>
 </document>

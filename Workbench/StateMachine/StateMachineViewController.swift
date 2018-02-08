@@ -17,6 +17,8 @@ class StateMachineViewController: UIViewController {
         super.viewDidLoad()
         setupStateMachineAndEventHandlers()
 
+        view.setContextValue("Started", forKey: "state")
+
         // Event handlers can be removed, here add an event handler, which we will remove later**
         let last_id = eventDispatcher.on(event: "last") { (event) in
             Debug.info("!! Dummy event handler called \(event.id)") // This should never be outputed
@@ -31,8 +33,20 @@ class StateMachineViewController: UIViewController {
     func setupStateMachineAndEventHandlers() {
         // Setup a small state machine
         eventDispatcher.stateMachine = StateMachine(start: "start")
-        eventDispatcher.stateMachine?.at(state: "start", on: "first", goto: "running")
-        eventDispatcher.stateMachine?.at(state: "running", on: "last", goto: "start")
+        eventDispatcher.stateMachine?.at(state: "start", on: "A", goto: "running")
+        eventDispatcher.stateMachine?.at(state: "start", on: "C", goto: "idle")
+        eventDispatcher.stateMachine?.at(state: "running", on: "B", goto: "start")
+        eventDispatcher.stateMachine?.at(state: "running", on: "C", goto: "idle")
+        eventDispatcher.stateMachine?.at(state: "idle", on: "A", goto: "running")
+        eventDispatcher.stateMachine?.at(state: "idle", on: "B", goto: "start")
+
+        // Monitor state changes to set the state label
+        eventDispatcher.stateMachine?.on(state: nil) { (event) in
+            if let state = self.eventDispatcher.stateMachine?.current {
+                print("####### \(event.userdata)")
+                self.view.setContextValue(state, forKey: "state")
+            }
+        }
 
         // Output a dot file, to view the state machine
         eventDispatcher.stateMachine?.outputDot()
@@ -45,11 +59,17 @@ class StateMachineViewController: UIViewController {
             print("** Entered running with \(event.id)")
         }
 
-        // Add some event handlers
-        eventDispatcher.on(event: "first") { (event) in
+        // Add some event handlers [seperate from the statemachine]
+        // eventDispatcher.on(event: nil) { (event) in
+        //     print("## \(event.id)")
+        // }
+        eventDispatcher.on(event: "A") { (event) in
             print(">> \(event.id)")
         }
-        eventDispatcher.on(event: "last") { (event) in
+        eventDispatcher.on(event: "B") { (event) in
+            print(">> \(event.id)")
+        }
+        eventDispatcher.on(event: "C") { (event) in
             print(">> \(event.id)")
         }
 
@@ -71,6 +91,12 @@ class StateMachineViewController: UIViewController {
             }
         }.queue()
 
+    }
+
+    @IBAction func buttonPressed(_ sender: UIButton!) {
+        if let event = sender.titleLabel?.text {
+            eventDispatcher.dispatchOnMain(event: Event(id: event, userdata: ["date": Date()]))
+        }
     }
 
 }

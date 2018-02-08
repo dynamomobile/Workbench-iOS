@@ -34,11 +34,12 @@ class EventDispatcher {
     }
 
     func dispatch(event: Event) {
-        Debug.info("Begin dispatch event: \(event.id)")
         eventHandlers[event.id]?.forEach { (_, eventHandler) in
             eventHandler(event)
         }
-        Debug.info("End dispatch event: \(event.id)")
+        eventHandlers["@allevents"]?.forEach { (_, eventHandler) in
+            eventHandler(event)
+        }
         stateMachine?.handle(event: event)
     }
 
@@ -55,9 +56,10 @@ class EventDispatcher {
         }
     }
 
-    @discardableResult func on(event: String, do callback: @escaping EventCallback) -> Int {
+    @discardableResult func on(event: String?, do callback: @escaping EventCallback) -> Int {
         let id = eventHandlerID
         eventHandlerID += 1
+        let event = event ?? "@allevents"
         if eventHandlers[event] == nil {
             eventHandlers[event] = [id: callback]
         } else {
@@ -95,9 +97,10 @@ class StateMachine {
         }
     }
 
-    @discardableResult func on(state: String, do callback: @escaping EventDispatcher.EventCallback) -> Int {
+    @discardableResult func on(state: String?, do callback: @escaping EventDispatcher.EventCallback) -> Int {
         let id = stateHandlerID
         stateHandlerID += 1
+        let state = state ?? "@allstates"
         if stateHandlers[state] == nil {
             stateHandlers[state] = [id: callback]
         } else {
@@ -116,18 +119,13 @@ class StateMachine {
 
     func handle(event: Event) {
         if let next = states[current]?[event.id] {
-            if let name = name {
-                Debug.info("State machine: \(name)")
-            }
-            Debug.info("Begin enter state: \(next)")
             current = next
             stateHandlers[current]?.forEach { (_, stateHandler) in
                 stateHandler(event)
             }
-            if let name = name {
-                Debug.info("State machine: \(name)")
+            stateHandlers["@allstates"]?.forEach { (_, stateHandler) in
+                stateHandler(event)
             }
-            Debug.info("End enter state: \(next)")
         }
     }
 
