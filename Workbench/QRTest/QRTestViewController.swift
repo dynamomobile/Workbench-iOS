@@ -56,7 +56,7 @@ class QRTestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        AppSchemeData.shared.onUpdateFor(self) { [weak self] in
+        AppSchemeData.shared.register(observer: self) { [weak self] in
             self?.setupParts()
         }
 

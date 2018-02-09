@@ -27,8 +27,8 @@ class AppSchemeData {
 
     private var data: [String: String] = [:]
 
-    func onUpdateFor(_ object: NSObject, _ updateBlock: @escaping () -> Void) {
-        object.associatedObjects?["AppSchemeDataParasite"] = AppSchemeDataParasite.init(updateBlock)
+    func register(observer: NSObject, updateBlock: @escaping () -> Void) {
+        observer.associatedObjects?["AppSchemeDataParasite"] = AppSchemeDataParasite(updateBlock)
     }
 
     func update(url: URL) {

@@ -55,7 +55,7 @@ The Associated demo show a simplified API for so called associated objects. This
 
 ## State Machine
 
-Work in progress. Should add some UI elements etc to show it working, maybe even add a download sequence state machine.
+Yet another State Machine class. Demo also generates a `dot` file which can be used to create a PDF of the state machine to be able to look at it. The demo is a simple 3 state SM with 3 events (here emitted by buttons).
 
 ## QR Test
 
