@@ -833,6 +833,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="mj5-tx-8PS" firstAttribute="centerX" secondItem="EVv-VT-cRn" secondAttribute="centerX" id="3kR-Eh-jdc"/>
+                            <constraint firstItem="cyY-TD-frK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EVv-VT-cRn" secondAttribute="leading" constant="20" symbolic="YES" id="AFW-aB-gSr"/>
                             <constraint firstItem="cyY-TD-frK" firstAttribute="top" secondItem="PCw-oh-REz" secondAttribute="bottom" constant="20" id="AsA-qd-uhm"/>
                             <constraint firstItem="Ndp-HR-YJi" firstAttribute="trailing" secondItem="PCw-oh-REz" secondAttribute="trailing" constant="20" id="H04-Jz-R66"/>
                             <constraint firstItem="aBq-Wu-0oL" firstAttribute="top" secondItem="Ndp-HR-YJi" secondAttribute="top" constant="12" id="IJB-jf-ou3"/>
