@@ -16,8 +16,7 @@ class AppSchemeData {
             super.init()
             observer = NotificationCenter.default.addObserver(forName: AppSchemeDataParasite.updateNotification,
                                                               object: nil,
-                                                              queue: nil,
-                                                              using: { (_) in updateBlock() })
+                                                              queue: nil) { (_) in updateBlock() }
         }
 
     }
