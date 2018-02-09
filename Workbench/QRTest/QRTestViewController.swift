@@ -4,9 +4,10 @@ class QRTestViewController: UIViewController {
 
     @IBOutlet weak var ballView: UIView!
 
-    var ballPosition = CGPoint(x: 0, y: 0)
-    var ballVelocity = CGPoint(x: 0, y: 0)
+    var ballPosition = CGPoint.zero
+    var ballVelocity = CGPoint.zero
     var ballSize = CGFloat(0)
+    var delay = 40
 
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
@@ -15,14 +16,14 @@ class QRTestViewController: UIViewController {
         Debug.info("† deinit: \(String(describing: type(of: self)))")
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func setupParts() {
+        ballPosition = .zero
+        ballVelocity = .zero
+        delay = 40
 
         screenWidth = view.bounds.width
         screenHeight = view.bounds.height
         ballSize = screenWidth/10.0
-
-        var delay = 40
 
         // Get some possible QR code data available in AppSchemeData
         if let color = AppSchemeData.shared.lookupColorBy(name: "color") {
@@ -50,11 +51,27 @@ class QRTestViewController: UIViewController {
         ballView.center.x = screenWidth/2
         ballView.center.y = screenHeight*CGFloat(1-1/Float.goldenRatio)
         ballPosition = ballView.center
-
-        updateBallPosition(delay: delay)
     }
 
-    func updateBallPosition(delay: Int) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        AppSchemeData.shared.onUpdateFor(self) { [weak self] in
+            self?.setupParts()
+        }
+
+        setupParts()
+        animate()
+    }
+
+    func animate() {
+        DispatchQueue.onMain(after: delay) { [weak self] in
+            self?.updateBallPosition()
+            self?.animate()
+        }
+    }
+
+    func updateBallPosition() {
         ballPosition += ballVelocity
         if ballPosition.x > screenWidth-ballSize/2.0 {
             ballPosition.x = screenWidth-ballSize/2.0
@@ -72,9 +89,6 @@ class QRTestViewController: UIViewController {
         }
         ballVelocity.y += 1.0
         ballView.center = ballPosition
-        DispatchQueue.onMain(after: delay) { [weak self] in
-            self?.updateBallPosition(delay: delay)
-        }
     }
 
 }

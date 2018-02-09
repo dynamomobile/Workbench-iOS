@@ -2,11 +2,35 @@ import UIKit
 
 class AppSchemeData {
 
+    private class AppSchemeDataParasite: NSObject {
+
+        static let updateNotification = Notification.Name("AppSchemeDataUpdateNotification")
+        var observer: NSObjectProtocol?
+
+        deinit {
+            Debug.info("† deinit: \(String(describing: type(of: self)))")
+            NotificationCenter.default.removeObserver(observer!)
+        }
+
+        init(_ updateBlock: @escaping () -> Void) {
+            super.init()
+            observer = NotificationCenter.default.addObserver(forName: AppSchemeDataParasite.updateNotification,
+                                                              object: nil,
+                                                              queue: nil,
+                                                              using: { (_) in updateBlock() })
+        }
+
+    }
+
     static var shared: AppSchemeData = {
         return AppSchemeData()
     }()
 
     private var data: [String: String] = [:]
+
+    func onUpdateFor(_ object: NSObject, _ updateBlock: @escaping () -> Void) {
+        object.associatedObjects?["AppSchemeDataParasite"] = AppSchemeDataParasite.init(updateBlock)
+    }
 
     func update(url: URL) {
         var collect: [String: String] = [:]
@@ -27,6 +51,8 @@ class AppSchemeData {
         } else {
             data = [:]
         }
+
+        NotificationCenter.default.post(name: AppSchemeDataParasite.updateNotification, object: nil)
     }
 
     func lookupBoolBy(name: String) -> Bool? {
