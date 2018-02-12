@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    // codestep-7A806A89-162F-44C6-8472-54A7627F0825 Application Open URL
     func application(_ app: UIApplication,
                      open url: URL,
                      options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
