@@ -6,6 +6,7 @@ cat /opt/X11/share/X11/rgb.txt | awk '{ if (NF == 4) { printf "\"%s\": \"%02x%02
 */
 
 private let lookup: [String: String] = [
+    "clear": "00000000",
     "snow": "fffafa",
     "GhostWhite": "f8f8ff",
     "WhiteSmoke": "f5f5f5",

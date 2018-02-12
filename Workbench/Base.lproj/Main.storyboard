@@ -392,7 +392,7 @@
                                     <constraint firstAttribute="height" constant="1" id="E3B-26-cjf"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="design" value="lightGray"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="design" value="LightGray"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YzC-2C-pII">
@@ -478,7 +478,7 @@
                                     <constraint firstAttribute="height" constant="1" id="rtm-uo-v1a"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="design" value="lightGray"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="design" value="LightGray"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>

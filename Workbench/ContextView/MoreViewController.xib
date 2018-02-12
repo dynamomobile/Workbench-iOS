@@ -37,7 +37,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="string" keyPath="design" value="lightGray"/>
+                <userDefinedRuntimeAttribute type="string" keyPath="design" value="LightGray"/>
             </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="46.5" y="-173.5"/>
         </view>
