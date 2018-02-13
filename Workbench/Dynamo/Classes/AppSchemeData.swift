@@ -34,6 +34,7 @@ class AppSchemeData {
     func update(url: URL) {
         var collect: [String: String] = [:]
 
+        // codestep-45C9BE9F-043F-4D9B-B9A3-0B2C4073B72F App Scheme Config
         if url.host == "set" {
             url.query?.components(separatedBy: "&").forEach({ (string) in
                 let parts = string.components(separatedBy: "=")
