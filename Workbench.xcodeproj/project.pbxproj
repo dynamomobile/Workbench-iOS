@@ -57,7 +57,7 @@
 		3A3E037420164317008C72CE /* QRTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRTestViewController.swift; sourceTree = "<group>"; };
 		3A3E0377201723E6008C72CE /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		3A3E0378201723E6008C72CE /* jquery.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jquery.min.js; sourceTree = "<group>"; };
-		3A3E0379201723E6008C72CE /* makeup-test.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "makeup-test.css"; sourceTree = "<group>"; };
+		3A3E0379201723E6008C72CE /* main.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
 		3A3E037A201723E6008C72CE /* qrcode.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = qrcode.js; sourceTree = "<group>"; };
 		3A3E20191FE16C25001CD0A6 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		3A487FD92004F7010047C354 /* MoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 			children = (
 				3A3E0377201723E6008C72CE /* index.html */,
 				3A3E0378201723E6008C72CE /* jquery.min.js */,
-				3A3E0379201723E6008C72CE /* makeup-test.css */,
+				3A3E0379201723E6008C72CE /* main.css */,
 				3A3E037A201723E6008C72CE /* qrcode.js */,
 			);
 			path = qrtest;
