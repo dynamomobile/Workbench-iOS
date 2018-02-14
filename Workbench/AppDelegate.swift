@@ -33,6 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         AppSchemeData.shared.update(url: url)
 
+        if AppSchemeData.shared.lookupBoolBy(name: "open") ?? false {
+            window?.rootViewController?.performSegue(withIdentifier: "qrtest", sender: self)
+        }
+
         return true
     }
 

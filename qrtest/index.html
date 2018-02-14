@@ -7,22 +7,32 @@
     <body>
         <div class="row">
             <div class="column left">
-                <select id="feature" onchange="change(this.value, true)">
+                <select id="feature">
                     <option value="demo1">Demo 1</option>
                     <option value="demo2">Demo 2</option>
                 </select>
-                <div class="option">
-                    <span id="field1_label">Field</span>: <input id="field1" type="text" value="" style="width: 110px">
-                        </div>
+                <div id="field1_div" class="option">
+                    <span id="field1_label">Field</span>: <input id="field1" type="text" value="" style="width: 110px"/>
+                </div>
                 <div id="field2_div" class="option">
-                    <span id="field2_label">Field</span>: <input id="field2" type="text" value="" style="width: 110px">
-                        </div>
+                    <span id="field2_label">Field</span>: <input id="field2" type="text" value="" style="width: 110px"/>
+                </div>
                 <div id="option1_div" class="option">
-                    <span id="option1_label">Option</span>: <input id="option1" type="checkbox">
-                        </div>
+                    <span id="option1_label">Option</span>: <input id="option1" type="checkbox"/>
+                </div>
                 <div id="option2_div" class="option">
-                    <span id="option2_label">Option</span>: <input id="option2" type="checkbox">
-                        </div>
+                    <span id="option2_label">Option</span>: <input id="option2" type="checkbox"/>
+                </div>
+                <div id="select1_div" class="option">
+                    <span id="select1_label">Select</span>:
+                    <select id="select1">
+                    </select>
+                </div>
+                <div id="select2_div" class="option">
+                    <span id="select2_label">Select</span>:
+                    <select id="select2">
+                    </select>
+                </div>
             </div>
             <div class="column">
                 <div id="qrcode" class="qrcode"></div>
@@ -49,20 +59,29 @@
 
                     if (reset) {
                         $("#field1_label").text( "Color" );
-                        $("#field2_label").text( "String" );
                         $("#option1_label").text( "Fast" );
+                        $("#option2_label").text( "Open" );
+                        $("#select1_label").text( "Size" );
                         $("#field1").val("");
-                        $("#field2").val("");
-                        $("#option1").attr('checked', false);
+                        $("#option1").attr("checked", false);
+                        $("#option2").attr("checked", false);
+                        $("#select1").empty();
+                        $("#select1").append($("<option/>", { value: "", text: "Not Set"}));
+                        $("#select1").append($("<option/>", { value: "small", text: "Small"}));
+                        $("#select1").append($("<option/>", { value: "big", text: "Big"}));
                     }
 
-                    $("#field2_div").show();
+                    $("#field2_div").hide();
                     $("#option1_div").show();
-                    $("#option2_div").hide();
+                    $("#option2_div").show();
+                    $("#select1_div").show();
+                    $("#select2_div").hide();
+
                     str = "color=" + encodeURIComponent($("#field1").val()) +
-                    "&fast=" + ($("#option1").attr("checked") ? "1" : "0");
-                    if ($("#field2").val().length > 0) {
-                        str += "&string=" + encodeURIComponent($("#field2").val());
+                    "&fast=" + ($("#option1").attr("checked") ? "1" : "0") +
+                    "&open=" + ($("#option2").attr("checked") ? "1" : "0");
+                    if ($("#select1").val() != "") {
+                        str += "&size=" + $("#select1").val();
                     }
                     setstr(str);
 
@@ -76,6 +95,8 @@
                     $("#field2_div").hide();
                     $("#option1_div").hide();
                     $("#option2_div").hide();
+                    $("#select1_div").hide();
+                    $("#select2_div").hide();
                     str = "string=" + encodeURIComponent($("#field1").val());
                     setstr(str);
 
@@ -88,10 +109,13 @@
 
             update(true);
 
+            $('#feature').change("input", function() { change(this.value, true); });
             $('#field1').on("input", function() { update(); });
             $('#field2').on("input", function() { update(); });
             $('#option1').change(function() { update(); });
             $('#option2').change(function() { update(); });
+            $('#select1').change(function() { update(); });
+            $('#select2').change(function() { update(); });
 
         </script>
     </body>

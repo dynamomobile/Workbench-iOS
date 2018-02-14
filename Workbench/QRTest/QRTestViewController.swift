@@ -31,7 +31,7 @@ class QRTestViewController: UIViewController {
             ballView.backgroundColor = color
         }
 
-        if let str = AppSchemeData.shared.lookupStringBy(name: "string") {
+        if let str = AppSchemeData.shared.lookupStringBy(name: "size") {
             switch str {
             case "big":
                 ballSize *= 2
