@@ -36,6 +36,11 @@ extension UIView {
         }
         set {
             objc_setAssociatedObject(self, UIView.contextKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            if self.isKind(of: UISlider.self),
+                let control = self as? UISlider {
+                control.addTarget(self, action: #selector(UISlider.wb_contextSliderUpdate), for: .valueChanged)
+                control.wb_contextSliderUpdate(control)
+            }
         }
     }
 
@@ -71,6 +76,18 @@ extension UIView {
                 objc_setAssociatedObject(self, UIView.viewControllerKey, vc, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             }
             contextCheckToSetup()
+        }
+    }
+
+}
+
+extension UISlider {
+
+    @objc
+    func wb_contextSliderUpdate(_ sender: UISlider!) {
+        if let parent = self.superview,
+            let context = self.context {
+            parent.setContextValue(sender.value, forKey: context)
         }
     }
 
