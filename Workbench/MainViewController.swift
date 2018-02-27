@@ -34,7 +34,9 @@ class MainViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let (_, segue, _, _) = buttons[indexPath.row]
-        performSegue(withIdentifier: segue, sender: self)
+        if let exception = tryExceptionBlock({ self.performSegue(withIdentifier: segue, sender: self) }) {
+            print("\(exception)")
+        }
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
