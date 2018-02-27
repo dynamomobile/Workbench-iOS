@@ -98,6 +98,7 @@
 		3AD5F6371FDAC5FD00EC5EAF /* UIViewController+Context.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Context.m"; sourceTree = "<group>"; };
 		3AD5F6381FDAC5FD00EC5EAF /* UIViewController+Context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Context.h"; sourceTree = "<group>"; };
 		3AD5F63C1FDAC64900EC5EAF /* Dynamo-Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dynamo-Bridging.h"; sourceTree = "<group>"; };
+		3AE778652045F4D3005393BC /* tryExceptionBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tryExceptionBlock.h; sourceTree = "<group>"; };
 		3AF884112003C5E7009900B7 /* ResponseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -245,6 +246,7 @@
 				3A0BA1821FE12FDD004CB22F /* UIViewController+Extensions.swift */,
 				3A97B7BE201B2BDB001B2852 /* DateFormatter+Extensions.swift */,
 				3A97B7C0201B3A56001B2852 /* ContextTransformer.swift */,
+				3AE778652045F4D3005393BC /* tryExceptionBlock.h */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
