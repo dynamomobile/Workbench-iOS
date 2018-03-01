@@ -16,6 +16,8 @@
 		3A487FDB2004F7010047C354 /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A487FD92004F7010047C354 /* MoreViewController.xib */; };
 		3A487FE22004FECD0047C354 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A487FE12004FECD0047C354 /* MoreViewController.swift */; };
 		3A6112F52031DB9D007A8A5B /* Workbench.csteps in Resources */ = {isa = PBXBuildFile; fileRef = 3A6112F42031DB9D007A8A5B /* Workbench.csteps */; };
+		3A7AB59F2047F3AA002B3F14 /* CSVReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7AB59E2047F3AA002B3F14 /* CSVReader.swift */; };
+		3A7AB5A22047FFD2002B3F14 /* CSVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7AB5A12047FFD2002B3F14 /* CSVViewController.swift */; };
 		3A8AF5F51FDE96F20037B02B /* UIView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8AF5F31FDE96F20037B02B /* UIView+Design.swift */; };
 		3A8AF5F71FDE97160037B02B /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8AF5F61FDE97160037B02B /* UIColor+Extensions.swift */; };
 		3A8AF5FC1FDE99070037B02B /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8AF5FB1FDE99070037B02B /* Strings.swift */; };
@@ -63,6 +65,8 @@
 		3A487FD92004F7010047C354 /* MoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
 		3A487FE12004FECD0047C354 /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		3A6112F42031DB9D007A8A5B /* Workbench.csteps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Workbench.csteps; sourceTree = "<group>"; };
+		3A7AB59E2047F3AA002B3F14 /* CSVReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVReader.swift; sourceTree = "<group>"; };
+		3A7AB5A12047FFD2002B3F14 /* CSVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVViewController.swift; sourceTree = "<group>"; };
 		3A8AF5F31FDE96F20037B02B /* UIView+Design.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Design.swift"; sourceTree = "<group>"; };
 		3A8AF5F61FDE97160037B02B /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		3A8AF5FB1FDE99070037B02B /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
@@ -167,6 +171,14 @@
 			path = StateMachine;
 			sourceTree = "<group>";
 		};
+		3A7AB5A02047FF9C002B3F14 /* CSV */ = {
+			isa = PBXGroup;
+			children = (
+				3A7AB5A12047FFD2002B3F14 /* CSVViewController.swift */,
+			);
+			path = CSV;
+			sourceTree = "<group>";
+		};
 		3A8AF5ED1FDE90640037B02B /* Design */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +237,7 @@
 				3A487FE4200511200047C354 /* Associated */,
 				3A487FE5200511310047C354 /* StateMachine */,
 				3A3E0373201641CD008C72CE /* QRTest */,
+				3A7AB5A02047FF9C002B3F14 /* CSV */,
 				3AD4C5361FB1F383005353C9 /* LaunchScreen.storyboard */,
 				3AD4C5311FB1F383005353C9 /* Main.storyboard */,
 				3AD4C5341FB1F383005353C9 /* Assets.xcassets */,
@@ -258,6 +271,7 @@
 				3A0900F62004C2A200804F98 /* SlideSegue.swift */,
 				3AD4C5481FB33164005353C9 /* AnimatedCheckmarkView.swift */,
 				3ABE5DF12010EF2800C1EAB2 /* AppSchemeData.swift */,
+				3A7AB59E2047F3AA002B3F14 /* CSVReader.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -399,9 +413,11 @@
 				3A8AF5F51FDE96F20037B02B /* UIView+Design.swift in Sources */,
 				3AD5F63A1FDAC5FD00EC5EAF /* UIView+Context.swift in Sources */,
 				3AD4C5491FB33164005353C9 /* AnimatedCheckmarkView.swift in Sources */,
+				3A7AB59F2047F3AA002B3F14 /* CSVReader.swift in Sources */,
 				3A8AF5F71FDE97160037B02B /* UIColor+Extensions.swift in Sources */,
 				3AD4C5421FB20943005353C9 /* Debug.swift in Sources */,
 				3A97B7C1201B3A56001B2852 /* ContextTransformer.swift in Sources */,
+				3A7AB5A22047FFD2002B3F14 /* CSVViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

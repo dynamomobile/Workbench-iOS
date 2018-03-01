@@ -8,7 +8,8 @@ class MainViewController: UICollectionViewController {
         ("title_context", "context", "green", "black"),
         ("title_associated", "associated", "blue", "white"),
         ("title_statemachine", "statemachine", "yellow", "black"),
-        ("title_qrtest", "qrtest", "magenta", "white")
+        ("title_qrtest", "qrtest", "magenta", "white"),
+        ("title_csv", "csv", "orange", "white")
     ]
 
     override func viewDidLoad() {
