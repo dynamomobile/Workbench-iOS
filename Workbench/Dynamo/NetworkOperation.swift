@@ -2,6 +2,13 @@ import UIKit
 
 class NetworkOperation: Operation {
 
+    private static let cacheOffSession: URLSession = {
+        let config = URLSessionConfiguration.default
+        config.requestCachePolicy = .reloadIgnoringLocalCacheData
+        config.urlCache = nil
+        return URLSession(configuration: config)
+    }()
+
     private static let defaultNetworkOperationQueue: OperationQueue = {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount = AppConfig.maxConcurrentNetworkOperationCount
@@ -56,7 +63,7 @@ class NetworkOperation: Operation {
         if let request = request {
             willChangeValue(forKey: "isExecuting")
             _isExecuting = true
-            URLSession.shared.dataTask(with: request) { (data, response, error) in
+            NetworkOperation.cacheOffSession.dataTask(with: request) { (data, response, error) in
                 self.completionHandler?(data, response, error)
                 self.completeOperation()
             }.resume()

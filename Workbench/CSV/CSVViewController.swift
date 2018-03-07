@@ -23,7 +23,7 @@ class CSVViewController: UIViewController, UITableViewDataSource {
                     code == 200,
                     let data = data,
                     let string = String(data: data, encoding: .utf8) {
-                    self.csvData = csvReader(string: string)
+                    self.csvData = csvReadLines(string: string)
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
