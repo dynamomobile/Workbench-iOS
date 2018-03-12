@@ -33,6 +33,8 @@ if let url = URL(string: "$URL") {
         }
         exit(0)
     }.queue()
+} else {
+    exit(0)
 }
 
 dispatchMain()
