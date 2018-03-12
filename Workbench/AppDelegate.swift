@@ -14,6 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ])
         }
 
+        // codestep-CC68ED86-2CA9-42CB-AA7F-C8C7F4190365 CSV Read Extra.json
+        //Strings.loadStringsFromFile(name: "Extra")
+
         enterStoryboard(name: "LaunchScreen")
 
         perform(#selector(fadeOutLaunchScreen), with: nil, afterDelay: 0.4)

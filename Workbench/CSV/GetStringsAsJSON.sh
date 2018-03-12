@@ -1,15 +1,17 @@
 #!/bin/bash
 
+# codestep-A1996372-5955-4187-B5EA-435383DB1F08 CSV Build phase
+
 SWIFT_FILE=/tmp/workbench.csv.swift
 SELECT_COLUMN=$1
 URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQsprRxOtY7tVC2GsVtsu-hYzbwMCrQJV6TuQUss4az-YjavOt2Dhu0DRcvGhFKA5HriHHBIlkNfeS1/pub?gid=464418893&single=true&output=csv"
 
 # Prepend some "includes"
-cat Workbench/Dynamo/Classes/CSVReader.swift \
-    Workbench/Dynamo/AppConfig.swift \
+cat Workbench/Dynamo/AppConfig.swift \
     Workbench/Dynamo/Debug.swift \
     Workbench/Dynamo/Extensions/Data+Extensions.swift \
-    Workbench/Dynamo/NetworkOperation.swift > $SWIFT_FILE
+    Workbench/Dynamo/NetworkOperation.swift \
+    Workbench/Dynamo/Classes/CSVReader.swift > $SWIFT_FILE
 
 # Add the code to get the CSV file and convert to JSON
 cat <<EOF >> $SWIFT_FILE

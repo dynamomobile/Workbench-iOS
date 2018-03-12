@@ -301,7 +301,7 @@
 				3AD4C5261FB1F383005353C9 /* Sources */,
 				3AD4C5271FB1F383005353C9 /* Frameworks */,
 				3AD4C5281FB1F383005353C9 /* Resources */,
-				3A10FD2A205681370064EB69 /* ShellScript */,
+				3A10FD2A205681370064EB69 /* Run Script - Download Google Sheet (Extra.json) */,
 			);
 			buildRules = (
 			);
@@ -365,13 +365,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3A10FD2A205681370064EB69 /* ShellScript */ = {
+		3A10FD2A205681370064EB69 /* Run Script - Download Google Sheet (Extra.json) */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script - Download Google Sheet (Extra.json)";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
