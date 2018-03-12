@@ -377,7 +377,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SELECT_COLUMN=sv\nJSON_FILE=${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}/Extra.json\n\n# Use env to compile plain w/o project target in mind\nenv -i ./Workbench/CSV/GetStringsAsJSON.sh $SELECT_COLUMN > \"$JSON_FILE\"\n\n# Remove if probable network problem\nif ! grep title_ \"$JSON_FILE\"\nthen\n    echo DELETE\n    rm \"$JSON_FILE\"\nfi\n";
+			shellScript = "SELECT_COLUMN=sv\nJSON_FILE=\"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}/Extra.json\"\n\n# Use env to compile plain w/o project target in mind\nenv -i ./Workbench/CSV/GetStringsAsJSON.sh $SELECT_COLUMN > \"$JSON_FILE\"\n\n# Remove if probable network problem\nif ! grep title_ \"$JSON_FILE\"\nthen\n    echo DELETE\n    rm \"$JSON_FILE\"\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		3AD4C5451FB20BE0005353C9 /* Swift Lint */ = {
