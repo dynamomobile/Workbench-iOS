@@ -30,6 +30,10 @@ class MainViewController: UICollectionViewController {
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        collectionView?.reloadData() // This is to reload to get any updates ie to 'Strings'
+    }
+
     @IBAction func unwindToMainViewController(segue: UIStoryboardSegue) {
     }
 

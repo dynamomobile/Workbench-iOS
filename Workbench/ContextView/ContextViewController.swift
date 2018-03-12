@@ -14,7 +14,7 @@ class ContextViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
 
         view.setFullContext([
-            "title": "Context"
+            "title": Strings.lookup(string: "title_context")
         ])
 
         if let url = URL(string: "http://api.open-notify.org/astros.json") {
@@ -37,7 +37,7 @@ class ContextViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "More Context" {
             segue.destination.view.setFullContext([
-                "title": "More ...",
+                "title": Strings.lookup(string: "title_more"),
                 "one": [ "two": [ "answer": "42" ] ],
                 "more_label": "Don't Panic!",
                 "intValue": 0xff350012,

@@ -466,6 +466,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="borderColor" value="blue"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="borderWidth" value="1"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="design" value="clear:blue"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="designTitle" value="title_more"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="cPN-aA-mhW" kind="show" identifier="More Context" customClass="SlideLeftSegue" customModule="Workbench" customModuleProvider="target" id="Cxo-pR-tQP"/>
