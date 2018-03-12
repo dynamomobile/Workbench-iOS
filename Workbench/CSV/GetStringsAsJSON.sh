@@ -26,8 +26,9 @@ if let url = URL(string: "$URL") {
             let data = data,
             let string = String(data: data, encoding: .utf8) {
             let items = csvReadLookup(string: string, keyName: "id", valueName: "$SELECT_COLUMN")
-            if let json = Data.JSON(items) {
-                print("\(String(data: json, encoding: .utf8)!)")
+            if let jsonData = Data.JSON(items),
+                let json = String(data: jsonData, encoding: .utf8) {
+                print("\(json)")
             }
         }
         exit(0)
