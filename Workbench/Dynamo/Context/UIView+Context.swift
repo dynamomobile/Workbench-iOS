@@ -1,5 +1,38 @@
 import UIKit
 
+private class TableViewDataSourceParasite: NSObject, UITableViewDataSource {
+
+    let cellIdentifier: String!
+    let contextKey: String!
+
+    deinit {
+        Debug.info("† deinit: \(String(describing: type(of: self)))")
+    }
+
+    init(cellIdentifier: String, contextKey: String) {
+        self.cellIdentifier = cellIdentifier
+        self.contextKey = contextKey
+    }
+
+    // MARK: - Table View DataSource
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let arr = tableView.contextValue(forKey: contextKey) as? [Any] {
+            return arr.count
+        }
+        return 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
+        if let arr = tableView.contextValue(forKey: contextKey) as? [[String: Any]] {
+            cell?.setFullContext(arr[indexPath.row])
+        }
+        return cell!
+    }
+
+}
+
 extension UIView {
 
     static let contextPointerBase        = UnsafeRawPointer("contextPointerBase")
@@ -7,6 +40,7 @@ extension UIView {
     static let viewControllerKey         = contextPointerBase+1
     static let parentViewControllerKey   = contextPointerBase+2
     static let textChangeNotificationKey = contextPointerBase+3
+    static let tableViewParasiteKey      = contextPointerBase+4
 
     // Setup childViewController when loaded from property "viewcontroller" and has parentViewcontroller
     func contextCheckToSetup() {
@@ -37,6 +71,20 @@ extension UIView {
         }
         set {
             objc_setAssociatedObject(self, UIView.contextKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            if self.isKind(of: UITableView.self),
+                let tableView = self as? UITableView,
+                let newValue = newValue {
+                var parts = newValue.components(separatedBy: "|")
+                let key = parts[0]
+                let extra = parts.count > 1 ? parts[1] : nil
+                let cellIdentifier = extra ?? "Cell"
+                let parasite = TableViewDataSourceParasite(cellIdentifier: cellIdentifier, contextKey: key)
+                tableView.dataSource = parasite
+                objc_setAssociatedObject(self,
+                                         UIView.tableViewParasiteKey,
+                                         parasite,
+                                         .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            }
             if self.isKind(of: UISlider.self),
                 let control = self as? UISlider {
                 control.addTarget(self, action: #selector(UISlider.wb_contextSliderUpdate), for: .valueChanged)
@@ -102,6 +150,9 @@ extension UIView {
         if self.isKind(of: UITextField.self), let textField = self as? UITextField,
             let contextValue = contextValue(forKey: key) as? ContextTransformer {
             textField.text = contextValue.toString(extra: extra)
+        }
+        if self.isKind(of: UITableView.self), let tableView = self as? UITableView {
+            tableView.reloadData()
         }
     }
 

@@ -440,9 +440,9 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="rowHeight">
                                         <integer key="value" value="57"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="context" value="list|ContextTableViewCell"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="dataSource" destination="brF-lc-bNw" id="jJm-l3-DGI"/>
                                     <outlet property="delegate" destination="brF-lc-bNw" id="OU5-XE-4iI"/>
                                 </connections>
                             </tableView>

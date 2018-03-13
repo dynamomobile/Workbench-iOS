@@ -1,8 +1,6 @@
 import UIKit
 
-class ContextViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    var peopleInSpace: [[String: String]] = []
+class ContextViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -24,9 +22,8 @@ class ContextViewController: UIViewController, UITableViewDelegate, UITableViewD
                     Debug.info("Data:     \(data?.count ?? 0)")
                     if let json: [String: Any] = data?.JSON(),
                         let people = json["people"] as? [[String: String]] {
-                        self.peopleInSpace = people
                         DispatchQueue.main.async {
-                            self.tableView.reloadData()
+                            self.tableView.setContextValue(people, forKey: "list")
                         }
                     }
                 }
@@ -45,18 +42,6 @@ class ContextViewController: UIViewController, UITableViewDelegate, UITableViewD
                 "date": Date()
             ])
         }
-    }
-
-    // MARK: - Table View DataSource
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return peopleInSpace.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ContextTableViewCell")
-        cell?.setFullContext(peopleInSpace[indexPath.row])
-        return cell!
     }
 
 }
