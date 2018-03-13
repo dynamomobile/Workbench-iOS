@@ -29,9 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      open url: URL,
                      options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
 
-        // codestep-186B9FFD-7B58-4737-83F1-2037D80F0112 App Scheme Config
-        // This is the entry point to decode a qr code/app scheme
-        // Setup is for "workbench-test" as the App Scheme and parameters
+        // codestep-186B9FFD-7B58-4737-83F1-2037D80F0112 URL Scheme Config
+        // This is the entry point to decode a qr code/url scheme
+        // Setup is for "workbench-test" as the URL Scheme and parameters
         // are supplied as: workbench-test://set?param1=42&param2=happy
 
         URLSchemeData.shared.update(url: url)

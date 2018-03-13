@@ -26,7 +26,7 @@ class QRTestViewController: UIViewController {
         ballSize = screenWidth/10.0
 
         // Get some possible QR code data available in URLSchemeData
-        // codestep-7DBB4E08-23EA-43FF-8635-52AAEB59F93A Check App Scheme Data
+        // codestep-7DBB4E08-23EA-43FF-8635-52AAEB59F93A Check URL Scheme Data
         if let color = URLSchemeData.shared.lookupColorBy(name: "color") {
             ballView.backgroundColor = color
         }
@@ -57,7 +57,7 @@ class QRTestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // codestep-0A55E47B-4BBE-436C-8E4B-1B763CA43D23 Register for App Scheme Updates
+        // codestep-0A55E47B-4BBE-436C-8E4B-1B763CA43D23 Register for URL Scheme Updates
         URLSchemeData.shared.register(observer: self) { [weak self] in
             self?.setupParts()
         }

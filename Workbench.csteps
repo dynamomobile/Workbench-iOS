@@ -14,7 +14,7 @@
       "arrows" : [
 
       ],
-      "title" : "Check App Scheme Data",
+      "title" : "Check URL Scheme Data",
       "id" : "codestep-7DBB4E08-23EA-43FF-8635-52AAEB59F93A",
       "editor" : "Xcode"
     },
@@ -23,7 +23,7 @@
       "arrows" : [
 
       ],
-      "title" : "Register for App Scheme Updates",
+      "title" : "Register for URL Scheme Updates",
       "id" : "codestep-0A55E47B-4BBE-436C-8E4B-1B763CA43D23",
       "editor" : "Xcode"
     },
@@ -33,7 +33,7 @@
         4,
         5
       ],
-      "title" : "App Scheme Config",
+      "title" : "URL Scheme Config",
       "id" : "codestep-186B9FFD-7B58-4737-83F1-2037D80F0112",
       "editor" : "Xcode"
     },
@@ -93,11 +93,11 @@
       "editor" : "Xcode"
     }
   ],
-  "window" : "{{-168, 1266}, {1192, 866}}",
+  "window" : "{{349, 1008}, {1192, 866}}",
   "labels" : [
     {
       "rect" : "{{194.083984375, 90.4140625}, {220, 29}}",
-      "title" : "App Scheme"
+      "title" : "URL Scheme"
     },
     {
       "rect" : "{{868.279296875, 88.3828125}, {100, 29}}",
