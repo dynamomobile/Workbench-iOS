@@ -2,7 +2,9 @@
 
 This project is a collection of good to have tricks'n'tips and useful Xcode/Swift snippets. The framework-like parts are organised in the `Dynamo` group and should be easily copied to a new project. Remember to add `#import "Dynamo-Bridging.h"` to any bridging header in a new project.
 
-The project contains a CodeSteps file that contains a number of code bookmarks. CodeSteps is described here http://dyna.mo/bookmarking-tool-for-code/
+The project contains the CodeSteps utility and a CodeSteps file that contains a number of code bookmarks.
+
+The CodeSteps utility is in the `codesteps` folder. But you can also download the latest version from [here](raw/master/codesteps/CodeSteps_1.0_12.zip). It is also described here http://dyna.mo/bookmarking-tool-for-code/
 
 ## Misc
 
