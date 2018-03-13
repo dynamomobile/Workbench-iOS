@@ -34,9 +34,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Setup is for "workbench-test" as the App Scheme and parameters
         // are supplied as: workbench-test://set?param1=42&param2=happy
 
-        AppSchemeData.shared.update(url: url)
+        URLSchemeData.shared.update(url: url)
 
-        if AppSchemeData.shared.lookupBoolBy(name: "open") ?? false {
+        if URLSchemeData.shared.lookupBoolBy(name: "open") ?? false {
             window?.rootViewController?.performSegue(withIdentifier: "qrtest", sender: self)
         }
 

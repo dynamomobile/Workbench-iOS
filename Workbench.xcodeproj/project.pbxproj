@@ -30,7 +30,7 @@
 		3A97B7BF201B2BDB001B2852 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97B7BE201B2BDB001B2852 /* DateFormatter+Extensions.swift */; };
 		3A97B7C1201B3A56001B2852 /* ContextTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97B7C0201B3A56001B2852 /* ContextTransformer.swift */; };
 		3A9E1D751FD69D3D0020954A /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9E1D741FD69D3D0020954A /* Data+Extensions.swift */; };
-		3ABE5DF22010EF2800C1EAB2 /* AppSchemeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABE5DF12010EF2800C1EAB2 /* AppSchemeData.swift */; };
+		3ABE5DF22010EF2800C1EAB2 /* URLSchemeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABE5DF12010EF2800C1EAB2 /* URLSchemeData.swift */; };
 		3AD4C52E1FB1F383005353C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD4C52D1FB1F383005353C9 /* AppDelegate.swift */; };
 		3AD4C5301FB1F383005353C9 /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD4C52F1FB1F383005353C9 /* DownloadViewController.swift */; };
 		3AD4C5331FB1F383005353C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD4C5311FB1F383005353C9 /* Main.storyboard */; };
@@ -80,7 +80,7 @@
 		3A97B7BE201B2BDB001B2852 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		3A97B7C0201B3A56001B2852 /* ContextTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextTransformer.swift; sourceTree = "<group>"; };
 		3A9E1D741FD69D3D0020954A /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
-		3ABE5DF12010EF2800C1EAB2 /* AppSchemeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSchemeData.swift; sourceTree = "<group>"; };
+		3ABE5DF12010EF2800C1EAB2 /* URLSchemeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSchemeData.swift; sourceTree = "<group>"; };
 		3AD4C52A1FB1F383005353C9 /* Workbench.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workbench.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD4C52D1FB1F383005353C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AD4C52F1FB1F383005353C9 /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
@@ -272,7 +272,7 @@
 				3AF884112003C5E7009900B7 /* ResponseButton.swift */,
 				3A0900F62004C2A200804F98 /* SlideSegue.swift */,
 				3AD4C5481FB33164005353C9 /* AnimatedCheckmarkView.swift */,
-				3ABE5DF12010EF2800C1EAB2 /* AppSchemeData.swift */,
+				3ABE5DF12010EF2800C1EAB2 /* URLSchemeData.swift */,
 				3A7AB59E2047F3AA002B3F14 /* CSVReader.swift */,
 			);
 			path = Classes;
@@ -414,7 +414,7 @@
 				3A97B7BF201B2BDB001B2852 /* DateFormatter+Extensions.swift in Sources */,
 				3A8AF6001FDE9BC00037B02B /* Float+Extensions.swift in Sources */,
 				3A0900F72004C2A200804F98 /* SlideSegue.swift in Sources */,
-				3ABE5DF22010EF2800C1EAB2 /* AppSchemeData.swift in Sources */,
+				3ABE5DF22010EF2800C1EAB2 /* URLSchemeData.swift in Sources */,
 				3A8AF60A1FDEC56F0037B02B /* AssociatedViewController.swift in Sources */,
 				3AD4C54D1FB33C92005353C9 /* DispatchQueue+Extensions.swift in Sources */,
 				3AD4C5441FB20ABF005353C9 /* AppConfig.swift in Sources */,

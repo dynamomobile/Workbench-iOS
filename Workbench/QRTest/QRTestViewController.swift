@@ -25,13 +25,13 @@ class QRTestViewController: UIViewController {
         screenHeight = view.bounds.height
         ballSize = screenWidth/10.0
 
-        // Get some possible QR code data available in AppSchemeData
+        // Get some possible QR code data available in URLSchemeData
         // codestep-7DBB4E08-23EA-43FF-8635-52AAEB59F93A Check App Scheme Data
-        if let color = AppSchemeData.shared.lookupColorBy(name: "color") {
+        if let color = URLSchemeData.shared.lookupColorBy(name: "color") {
             ballView.backgroundColor = color
         }
 
-        if let str = AppSchemeData.shared.lookupStringBy(name: "size") {
+        if let str = URLSchemeData.shared.lookupStringBy(name: "size") {
             switch str {
             case "big":
                 ballSize *= 2
@@ -42,7 +42,7 @@ class QRTestViewController: UIViewController {
             }
         }
 
-        if AppSchemeData.shared.lookupBoolBy(name: "fast") == true {
+        if URLSchemeData.shared.lookupBoolBy(name: "fast") == true {
             delay = 20
         }
 
@@ -58,7 +58,7 @@ class QRTestViewController: UIViewController {
         super.viewDidLoad()
 
         // codestep-0A55E47B-4BBE-436C-8E4B-1B763CA43D23 Register for App Scheme Updates
-        AppSchemeData.shared.register(observer: self) { [weak self] in
+        URLSchemeData.shared.register(observer: self) { [weak self] in
             self?.setupParts()
         }
 
