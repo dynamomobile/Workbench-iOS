@@ -1,8 +1,6 @@
 import UIKit
 
-class CSVViewController: UIViewController, UITableViewDataSource {
-
-    var csvData: [[String: String]] = []
+class CSVViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -24,24 +22,12 @@ class CSVViewController: UIViewController, UITableViewDataSource {
                     code == 200,
                     let data = data,
                     let string = String(data: data, encoding: .utf8) {
-                    self.csvData = csvReadLines(string: string)
                     DispatchQueue.main.async {
-                        self.tableView.reloadData()
+                        self.view.setContextValue(csvReadLines(string: string), forKey: "csvData")
                     }
                 }
             }.queue()
         }
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return csvData.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "csvcell") {
-            cell.setFullContext(csvData[indexPath.row])
-            return cell
-        }
-        return UITableViewCell()
-    }
 }
