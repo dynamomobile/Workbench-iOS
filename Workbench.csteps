@@ -61,7 +61,7 @@
       "arrows" : [
         7
       ],
-      "title" : "CSV demo (URL),https:\/\/docs.google.com\/spreadsheets\/d\/1-MR16-K4MMRu5ScKpP0bYD8pVvMhsyhCi9B_8i2Ndlg\/edit#gid=0",
+      "title" : "CSV demo (URL),https:\/\/docs.google.com\/spreadsheets\/d\/1-MR16-K4MMRu5ScKpP0bYD8pVvMhsyhCi9B_8i2Ndlg\/edit?usp=sharing",
       "id" : "codestep-2AC5C75B-2616-4D2B-9E63-45673AE2AADB",
       "editor" : "Safari"
     },
@@ -93,7 +93,7 @@
       "editor" : "Xcode"
     }
   ],
-  "window" : "{{349, 1008}, {1192, 866}}",
+  "window" : "{{-95, 1354}, {1192, 866}}",
   "labels" : [
     {
       "rect" : "{{194.083984375, 90.4140625}, {220, 29}}",
