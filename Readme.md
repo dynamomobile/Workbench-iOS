@@ -4,7 +4,7 @@ This project is a collection of good to have tricks'n'tips and useful Xcode/Swif
 
 The project contains the CodeSteps utility and a CodeSteps file that contains a number of code bookmarks.
 
-The CodeSteps utility is in the `codesteps` folder. But you can also download the latest version from [here](https://github.com/dynamomobile/Workbench-iOS/raw/master/codesteps/CodeSteps_1.0_12.zip). It is also described here http://dyna.mo/bookmarking-tool-for-code/
+The CodeSteps utility is in the `codesteps` folder. But you can also download the latest version from [here](https://github.com/dynamomobile/Workbench-iOS/raw/master/codesteps/CodeSteps_1.0_13.zip). It is also described here http://dyna.mo/bookmarking-tool-for-code/
 
 ## Misc
 
