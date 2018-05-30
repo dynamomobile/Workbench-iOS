@@ -54,11 +54,7 @@ class AssociatedViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        if let calloutView = CalloutView.loadView() {
-            calloutView.textLabel.text = "This is fun! I could do this all day, but now I have to start the BBQ"
-            view.addSubview(calloutView)
-            calloutView.setTarget(view: target)
-        }
+        presentsCallout(string: "callout-1", target: target)
     }
     
     func dummy() -> Dummy {

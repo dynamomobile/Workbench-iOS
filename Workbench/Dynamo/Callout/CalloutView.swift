@@ -31,12 +31,23 @@ class CalloutView: UIView {
         } else {
             point = superview!.convert(centerBottom, from: nil)
         }
+        setNeedsLayout()
+        setNeedsDisplay()
     }
     
-    static func loadView() -> CalloutView? {        
-        return Bundle.main.loadNibNamed("CalloutView", owner: nil, options: nil)?.first as? CalloutView
+    static func makeCallout(string: String, target: UIView) -> CalloutView? {
+        if let calloutView = Bundle.main.loadNibNamed("CalloutView",
+                                                      owner: nil,
+                                                      options: nil)?.first as? CalloutView {
+            calloutView.textLabel.text = string
+            DispatchQueue.main.async {
+                calloutView.setTarget(view: target)
+            }
+            return calloutView
+        }
+        return nil
     }
-    
+
     override func layoutSubviews() {
         textLabel.frame.size = CGSize(width: 2*superview!.bounds.size.width/3, height: 99999)
         textLabel.sizeToFit()
@@ -96,6 +107,17 @@ class CalloutView: UIView {
             path.addLine(to: p)
             path.close()
             path.fill()
+        }
+    }
+    
+}
+
+extension UIViewController {
+
+    func presentsCallout(string: String, target: UIView) {
+        if let calloutView = CalloutView.makeCallout(string: Strings.lookup(string: string),
+                                                     target: target) {
+            view.addSubview(calloutView)
         }
     }
     
