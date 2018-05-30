@@ -61,4 +61,16 @@ extension CGPoint {
         left = left - right
     }
     // swiftlint:enable shorthand_operator
+
+    func ceil() -> CGPoint {
+        return CGPoint(x: Darwin.ceil(x), y: Darwin.ceil(y))
+    }
+}
+
+// ----------------------------------------------------------------------
+
+extension CGSize {
+    func ceil() -> CGSize {
+        return CGSize(width: Darwin.ceil(width), height: Darwin.ceil(height))
+    }
 }

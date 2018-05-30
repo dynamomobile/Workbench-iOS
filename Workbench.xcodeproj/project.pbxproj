@@ -47,6 +47,8 @@
 		3AD5F6391FDAC5FD00EC5EAF /* UIView+Context.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD5F6341FDAC5FD00EC5EAF /* UIView+Context.m */; };
 		3AD5F63A1FDAC5FD00EC5EAF /* UIView+Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD5F6351FDAC5FD00EC5EAF /* UIView+Context.swift */; };
 		3AD5F63B1FDAC5FD00EC5EAF /* UIViewController+Context.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD5F6371FDAC5FD00EC5EAF /* UIViewController+Context.m */; };
+		3AEF9B1220B9A4FE00F46602 /* CalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEF9B1120B9A4FE00F46602 /* CalloutView.swift */; };
+		3AEF9B1420B9A52C00F46602 /* CalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEF9B1320B9A52C00F46602 /* CalloutView.xib */; };
 		3AF884122003C5E8009900B7 /* ResponseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF884112003C5E7009900B7 /* ResponseButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +106,8 @@
 		3AD5F6381FDAC5FD00EC5EAF /* UIViewController+Context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Context.h"; sourceTree = "<group>"; };
 		3AD5F63C1FDAC64900EC5EAF /* Dynamo-Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dynamo-Bridging.h"; sourceTree = "<group>"; };
 		3AE778652045F4D3005393BC /* tryExceptionBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tryExceptionBlock.h; sourceTree = "<group>"; };
+		3AEF9B1120B9A4FE00F46602 /* CalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutView.swift; sourceTree = "<group>"; };
+		3AEF9B1320B9A52C00F46602 /* CalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalloutView.xib; sourceTree = "<group>"; };
 		3AF884112003C5E7009900B7 /* ResponseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,6 +203,7 @@
 				3A8AF5FB1FDE99070037B02B /* Strings.swift */,
 				3AD4C53F1FB1F498005353C9 /* NetworkOperation.swift */,
 				3AD4C5461FB2FD8E005353C9 /* StateMachine.swift */,
+				3AEF9B1020B9A4D200F46602 /* Callout */,
 				3AD5F6321FDAC5E100EC5EAF /* Context */,
 				3A8AF5ED1FDE90640037B02B /* Design */,
 				3AD4C54E1FB3494E005353C9 /* Extensions */,
@@ -290,6 +295,15 @@
 			path = Context;
 			sourceTree = "<group>";
 		};
+		3AEF9B1020B9A4D200F46602 /* Callout */ = {
+			isa = PBXGroup;
+			children = (
+				3AEF9B1320B9A52C00F46602 /* CalloutView.xib */,
+				3AEF9B1120B9A4FE00F46602 /* CalloutView.swift */,
+			);
+			path = Callout;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -359,6 +373,7 @@
 				3AD4C5331FB1F383005353C9 /* Main.storyboard in Resources */,
 				3A6112F52031DB9D007A8A5B /* Workbench.csteps in Resources */,
 				3A8AF60E1FDFD3B50037B02B /* Floats.json in Resources */,
+				3AEF9B1420B9A52C00F46602 /* CalloutView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +430,7 @@
 				3A8AF6001FDE9BC00037B02B /* Float+Extensions.swift in Sources */,
 				3A0900F72004C2A200804F98 /* SlideSegue.swift in Sources */,
 				3ABE5DF22010EF2800C1EAB2 /* URLSchemeData.swift in Sources */,
+				3AEF9B1220B9A4FE00F46602 /* CalloutView.swift in Sources */,
 				3A8AF60A1FDEC56F0037B02B /* AssociatedViewController.swift in Sources */,
 				3AD4C54D1FB33C92005353C9 /* DispatchQueue+Extensions.swift in Sources */,
 				3AD4C5441FB20ABF005353C9 /* AppConfig.swift in Sources */,

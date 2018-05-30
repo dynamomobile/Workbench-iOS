@@ -54,7 +54,7 @@ class DownloadViewController: UIViewController {
         }
 
         let list = [
-            ("https://aftonbladet.se", animatedCheckmarkView1!, label1!),
+            ("https://youtube.com", animatedCheckmarkView1!, label1!),
             ("https://expressen.se", animatedCheckmarkView2!, label2!),
             ("https://cnn.com", animatedCheckmarkView3!, label3!),
             ("https://google.com", animatedCheckmarkView4!, label4!),

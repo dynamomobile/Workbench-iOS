@@ -34,6 +34,8 @@ class Dummy: NSObject {
 
 class AssociatedViewController: UIViewController {
 
+    @IBOutlet weak var target: UIView!
+    
     deinit {
         Debug.info("† deinit: \(String(describing: type(of: self)))")
     }
@@ -45,8 +47,20 @@ class AssociatedViewController: UIViewController {
             "title": "Associated",
             "dummy": "empty"
         ])
+        
+        let v = self.view.viewWithTag(110)
+        v?.frame.origin.x = 300*(CGFloat(arc4random() % 32768) / 32768.0)
+        v?.frame.origin.y = 600*(CGFloat(arc4random() % 32768) / 32768.0)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        if let calloutView = CalloutView.loadView() {
+            calloutView.textLabel.text = "This is fun! I could do this all day, but now I have to start the BBQ"
+            view.addSubview(calloutView)
+            calloutView.setTarget(view: target)
+        }
+    }
+    
     func dummy() -> Dummy {
         if let dummy = self.associatedObjects?["dummy"] as? Dummy {
             return dummy
