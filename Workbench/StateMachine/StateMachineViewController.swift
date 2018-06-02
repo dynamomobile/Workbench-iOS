@@ -31,7 +31,7 @@ class StateMachineViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        presentCallout()
+        presentCallouts()
     }
 
     func setupStateMachineAndEventHandlers() {
@@ -45,10 +45,10 @@ class StateMachineViewController: UIViewController {
         eventDispatcher.stateMachine?.at(state: "idle", on: "B", goto: "start")
 
         // Monitor state changes to set the state label
-        eventDispatcher.stateMachine?.on(state: nil) { (event) in
-            if let state = self.eventDispatcher.stateMachine?.current {
+        eventDispatcher.stateMachine?.on(state: nil) { [weak self] (event) in
+            if let state = self?.eventDispatcher.stateMachine?.current {
                 print("####### \(event.userdata)")
-                self.view.setContextValue(state, forKey: "state")
+                self?.view.setContextValue(state, forKey: "state")
             }
         }
 

@@ -12,15 +12,24 @@ private class CalloutTouchView: UIView {
         viewController.view.addSubview(self)
     }
 
+    func gotoNextCallout() {
+        calloutView?.removeFromSuperview()
+        removeFromSuperview()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak viewController] in
+            if let viewController = viewController,
+                viewController.isBeingDismissed == false {
+                viewController.presentCallouts()
+            }
+        }
+    }
+    
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         guard done == false else {
             return nil
         }
         done = true
         DispatchQueue.main.async {
-            self.calloutView?.removeFromSuperview()
-            self.removeFromSuperview()
-            self.viewController.presentCallout()
+            self.gotoNextCallout()
         }
         return nil
     }
@@ -194,34 +203,41 @@ class CalloutView: UIView {
     
 }
 
-@discardableResult
-private func presentCallout(viewController: UIViewController, view: UIView) -> Bool {
+private func presentCallout(view: UIView) -> UIView? {
+    var out: UIView?
     if let calloutID = view.calloutID {
         var calloutList: [String] = []
         if let list = UserDefaults.standard.object(forKey: "CalloutList") as? [String] {
             calloutList = list
         }
         if calloutList.contains(calloutID) == false {
-            calloutList.append(calloutID)
-            UserDefaults.standard.set(calloutList, forKey: "CalloutList")
-            CalloutView.makeCallout(string: Strings.lookup(string: view.calloutString!),
-                                    target: view,
-                                    viewController: viewController)
-            return true
+            out = view
         }
     }
     for view in view.subviews {
-        if presentCallout(viewController: viewController, view: view) {
-            return true
+        if let found = presentCallout(view: view) {
+            if out == nil || out!.calloutID?.compare(found.calloutID!) == .orderedDescending {
+                out = found
+            }
         }
     }
-    return false
+    return out
 }
 
 extension UIViewController {
     
-    func presentCallout() {
-        Workbench.presentCallout(viewController: self, view: view!)
+    func presentCallouts() {
+        if let found = Workbench.presentCallout(view: view!) {
+            var calloutList: [String] = []
+            if let list = UserDefaults.standard.object(forKey: "CalloutList") as? [String] {
+                calloutList = list
+            }
+            calloutList.append(found.calloutID!)
+            UserDefaults.standard.set(calloutList, forKey: "CalloutList")
+            CalloutView.makeCallout(string: Strings.lookup(string: found.calloutString!),
+                                    target: found,
+                                    viewController: self)
+        }
     }
     
 }

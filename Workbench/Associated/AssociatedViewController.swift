@@ -50,7 +50,7 @@ class AssociatedViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        presentCallout()
+        presentCallouts()
     }
     
     func dummy() -> Dummy {
