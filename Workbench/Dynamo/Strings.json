@@ -11,5 +11,8 @@
     "button_up": "Up",
     "button_empty": "Empty",
     "title_ppl_in_space": "People in Space",
+    "event_a": "Go to state Running on Event A",
+    "event_b": "Go to state Start on Event B",
+    "event_c": "Go to state Idle on Event C",
     "lorem ipsum": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam commodo, lorem at accumsan tempus, turpis augue sodales sapien, in pretium turpis turpis in sem."
 }

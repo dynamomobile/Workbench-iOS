@@ -797,6 +797,7 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="roundedCornerRadius" value="5"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="design" value="red:white"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="callout" value="eventA:event_a"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="NRJ-Gt-5CF" eventType="touchUpInside" id="EB4-kC-960"/>
@@ -812,6 +813,7 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="roundedCornerRadius" value="5"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="design" value="green:black"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="callout" value="eventB:event_b"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="NRJ-Gt-5CF" eventType="touchUpInside" id="4UQ-eg-K1E"/>
@@ -827,7 +829,7 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="roundedCornerRadius" value="5"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="design" value="blue:white"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="callout" value="this:lorem ipsum"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="callout" value="eventC:event_c"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="NRJ-Gt-5CF" eventType="touchUpInside" id="9q9-Sc-QfJ"/>

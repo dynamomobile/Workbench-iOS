@@ -1,5 +1,31 @@
 import UIKit
 
+private class CalloutTouchView: UIView {
+    
+    weak var calloutView: UIView!
+    weak var viewController: UIViewController!
+    var done = false
+
+    convenience init(viewController: UIViewController) {
+        self.init(frame: viewController.view.bounds)
+        self.viewController = viewController
+        viewController.view.addSubview(self)
+    }
+
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        guard done == false else {
+            return nil
+        }
+        done = true
+        DispatchQueue.main.async {
+            self.calloutView?.removeFromSuperview()
+            self.removeFromSuperview()
+            self.viewController.presentCallout()
+        }
+        return nil
+    }
+}
+
 extension UIView {
 
     static let calloutPointerBase = UnsafeRawPointer("calloutPointerBase")
@@ -57,6 +83,10 @@ class CalloutView: UIView {
         Debug.info("† deinit: \(String(describing: type(of: self)))")
     }
 
+    static func resetCallouts() {
+        UserDefaults.standard.removeObject(forKey: "CalloutList")
+    }
+    
     func setTarget(view: UIView) {
         let center = view.center
         var centerTop = view.superview!.convert(center, to: nil)
@@ -83,6 +113,8 @@ class CalloutView: UIView {
                                                       options: nil)?.first as? CalloutView {
             calloutView.textLabel.text = string
             DispatchQueue.main.async {
+                let touchView = CalloutTouchView(viewController: viewController)
+                touchView.calloutView = calloutView
                 viewController.view.addSubview(calloutView)
                 calloutView.setTarget(view: target)
             }
@@ -164,11 +196,19 @@ class CalloutView: UIView {
 
 @discardableResult
 private func presentCallout(viewController: UIViewController, view: UIView) -> Bool {
-    if view.calloutID != nil {
-        CalloutView.makeCallout(string: Strings.lookup(string: view.calloutString!),
-                                target: view,
-                                viewController: viewController)
-        return true
+    if let calloutID = view.calloutID {
+        var calloutList: [String] = []
+        if let list = UserDefaults.standard.object(forKey: "CalloutList") as? [String] {
+            calloutList = list
+        }
+        if calloutList.contains(calloutID) == false {
+            calloutList.append(calloutID)
+            UserDefaults.standard.set(calloutList, forKey: "CalloutList")
+            CalloutView.makeCallout(string: Strings.lookup(string: view.calloutString!),
+                                    target: view,
+                                    viewController: viewController)
+            return true
+        }
     }
     for view in view.subviews {
         if presentCallout(viewController: viewController, view: view) {

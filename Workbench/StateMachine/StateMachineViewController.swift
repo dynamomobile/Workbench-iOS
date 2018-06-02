@@ -75,6 +75,7 @@ class StateMachineViewController: UIViewController {
         }
         eventDispatcher.on(event: "C") { (event) in
             print(">> \(event.id)")
+            CalloutView.resetCallouts()
         }
 
         // Convert dot description to png

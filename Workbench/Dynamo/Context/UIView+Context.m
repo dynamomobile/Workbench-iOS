@@ -70,7 +70,7 @@ static NSMutableDictionary *globalContextDictionary = nil;
 {
     UIView *rootView = [self rootView];
     NSNumber *flag = objc_getAssociatedObject(rootView, BLOCK_KEY);
-    if (!flag) {
+    if (flag == nil) {
         objc_setAssociatedObject(rootView, BLOCK_KEY, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         dispatch_async(dispatch_get_main_queue(), ^{
             objc_setAssociatedObject(rootView, BLOCK_KEY, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
