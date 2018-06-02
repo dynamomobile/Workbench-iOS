@@ -1,5 +1,44 @@
 import UIKit
 
+extension UIView {
+
+    static let calloutPointerBase = UnsafeRawPointer("calloutPointerBase")
+
+    @IBInspectable
+    dynamic var callout: String? {
+        get {
+            return objc_getAssociatedObject(self, UIView.calloutPointerBase) as? String
+        }
+        set {
+            objc_setAssociatedObject(self, UIView.calloutPointerBase, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    var calloutID: String? {
+        get {
+            if let callout = callout,
+                callout.contains(":") {
+                return callout.components(separatedBy: ":")[0]
+            }
+            return nil
+        }
+        set {
+        }
+    }
+
+    var calloutString: String? {
+        get {
+            if let callout = callout,
+                callout.contains(":") {
+                return Strings.lookup(string: callout.components(separatedBy: ":")[1])
+            }
+            return nil
+        }
+        set {
+        }
+    }
+}
+
 class CalloutView: UIView {
 
     @IBOutlet weak var textLabel: UILabel!
@@ -22,8 +61,8 @@ class CalloutView: UIView {
         let center = view.center
         var centerTop = view.superview!.convert(center, to: nil)
         var centerBottom = centerTop
-        centerTop.y -= view.frame.size.height/2
-        centerBottom.y += view.frame.size.height/2
+        centerTop.y -= view.frame.size.height/2 + 5
+        centerBottom.y += view.frame.size.height/2 - 5
         let screenHeight = UIScreen.main.bounds.size.height
         if screenHeight - centerTop.y < centerBottom.y {
             calloutAboveTarget = true
@@ -35,12 +74,16 @@ class CalloutView: UIView {
         setNeedsDisplay()
     }
     
-    static func makeCallout(string: String, target: UIView) -> CalloutView? {
+    @discardableResult
+    static func makeCallout(string: String,
+                            target: UIView,
+                            viewController: UIViewController) -> CalloutView? {
         if let calloutView = Bundle.main.loadNibNamed("CalloutView",
                                                       owner: nil,
                                                       options: nil)?.first as? CalloutView {
             calloutView.textLabel.text = string
             DispatchQueue.main.async {
+                viewController.view.addSubview(calloutView)
                 calloutView.setTarget(view: target)
             }
             return calloutView
@@ -62,6 +105,12 @@ class CalloutView: UIView {
         rect.size.width += 2*shadowRadius
         rect.size.height += 2*pointHeigth
         frame.size = rect.size
+        if point.x < pointWidth + shadowRadius {
+            point.x = pointWidth + shadowRadius
+        }
+        if point.x > superview!.frame.width - (pointWidth + shadowRadius) {
+            point.x = superview!.frame.width - (pointWidth + shadowRadius)
+        }
         var x = point.x - rect.size.width/2
         if x < 0 {
             x = 0
@@ -73,10 +122,11 @@ class CalloutView: UIView {
         } else {
             frame.origin = CGPoint(x: x, y: point.y)
         }
-        self.layer.shadowRadius = shadowRadius
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOffset = CGSize(width: 0, height: 2)
-        self.layer.shadowOpacity = 0.4
+        layer.shadowRadius = shadowRadius
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 2)
+        layer.shadowOpacity = 0.4
+        layer.shouldRasterize = true
     }
     
     override func draw(_ rect: CGRect) {
@@ -112,13 +162,26 @@ class CalloutView: UIView {
     
 }
 
-extension UIViewController {
-
-    func presentsCallout(string: String, target: UIView) {
-        if let calloutView = CalloutView.makeCallout(string: Strings.lookup(string: string),
-                                                     target: target) {
-            view.addSubview(calloutView)
+@discardableResult
+private func presentCallout(viewController: UIViewController, view: UIView) -> Bool {
+    if view.calloutID != nil {
+        CalloutView.makeCallout(string: Strings.lookup(string: view.calloutString!),
+                                target: view,
+                                viewController: viewController)
+        return true
+    }
+    for view in view.subviews {
+        if presentCallout(viewController: viewController, view: view) {
+            return true
         }
+    }
+    return false
+}
+
+extension UIViewController {
+    
+    func presentCallout() {
+        Workbench.presentCallout(viewController: self, view: view!)
     }
     
 }

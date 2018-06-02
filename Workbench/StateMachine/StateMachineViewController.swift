@@ -30,6 +30,10 @@ class StateMachineViewController: UIViewController {
         eventDispatcher.removeHandler(id: last_id)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        presentCallout()
+    }
+
     func setupStateMachineAndEventHandlers() {
         // Setup a small state machine
         eventDispatcher.stateMachine = StateMachine(start: "start")

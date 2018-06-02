@@ -275,6 +275,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="design" value="red:white"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="designTitle" value="button_down"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="roundedCornerRadius" value="buttonCornerRadius"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="callout" value="this:lorem ipsum"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="down:" destination="sfT-2J-QYl" eventType="touchUpInside" id="NHE-JL-Cit"/>
@@ -320,20 +321,6 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="designTitle" value="title_associated"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <view userInteractionEnabled="NO" tag="110" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0k3-LE-8Pb">
-                                <rect key="frame" x="35" y="502" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I am the target" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGc-ki-vus">
-                                        <rect key="frame" x="63" y="54" width="114" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="0.25776375509999999" blue="0.1842943893" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -356,9 +343,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ztj-AK-8ad"/>
                     </view>
-                    <connections>
-                        <outlet property="target" destination="FGc-ki-vus" id="KB1-Lf-guL"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJe-sP-gwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="o3f-bA-ptS" userLabel="Exit" sceneMemberID="exit"/>
@@ -843,6 +827,7 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="roundedCornerRadius" value="5"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="design" value="blue:white"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="callout" value="this:lorem ipsum"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="NRJ-Gt-5CF" eventType="touchUpInside" id="9q9-Sc-QfJ"/>

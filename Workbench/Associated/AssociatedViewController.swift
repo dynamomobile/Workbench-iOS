@@ -47,14 +47,10 @@ class AssociatedViewController: UIViewController {
             "title": "Associated",
             "dummy": "empty"
         ])
-        
-        let v = self.view.viewWithTag(110)
-        v?.frame.origin.x = 300*(CGFloat(arc4random() % 32768) / 32768.0)
-        v?.frame.origin.y = 600*(CGFloat(arc4random() % 32768) / 32768.0)
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        presentsCallout(string: "callout-1", target: target)
+        presentCallout()
     }
     
     func dummy() -> Dummy {
