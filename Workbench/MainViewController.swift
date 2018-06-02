@@ -24,7 +24,8 @@ class MainViewController: UICollectionViewController {
                                              bottom: itemSpacing,
                                              right: itemSpacing)
             let width = view.bounds.size.width - itemSpacing*CGFloat(itemsInOneLine + 1)
-            flow.itemSize = CGSize(width: floor(width/itemsInOneLine), height: width/itemsInOneLine)
+            flow.itemSize = CGSize(width: floor(width/itemsInOneLine),
+                                   height: floor(2*width/(3*itemsInOneLine)))
             flow.minimumInteritemSpacing = itemSpacing
             flow.minimumLineSpacing = itemSpacing
         }

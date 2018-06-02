@@ -15,6 +15,7 @@ class DownloadViewController: UIViewController {
     @IBOutlet var label5: UILabel!
 
     deinit {
+        NetworkOperation.cancelAll()
         Debug.info("† deinit: \(String(describing: type(of: self)))")
     }
 
