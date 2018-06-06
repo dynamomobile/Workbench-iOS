@@ -97,6 +97,9 @@ class CalloutView: UIView {
     }
     
     func setTarget(view: UIView) {
+        guard superview != nil, view.superview != nil else {
+            return
+        }
         let center = view.center
         var centerTop = view.superview!.convert(center, to: nil)
         var centerBottom = centerTop
@@ -133,7 +136,10 @@ class CalloutView: UIView {
     }
 
     override func layoutSubviews() {
-        textLabel.frame.size = CGSize(width: 2*superview!.bounds.size.width/3, height: 99999)
+        guard superview != nil else {
+            return
+        }
+        textLabel.frame.size = CGSize(width: min(280, 2*superview!.bounds.size.width/3), height: 99999)
         textLabel.sizeToFit()
         var rect = CGRect(origin: CGPoint(x: horizontalMargin, y: verticalMargin),
                           size: textLabel.frame.size)
@@ -215,8 +221,9 @@ private func presentCallout(view: UIView) -> UIView? {
         }
     }
     for view in view.subviews {
-        if let found = presentCallout(view: view) {
-            if out == nil || out!.calloutID?.compare(found.calloutID!) == .orderedDescending {
+        if let found = presentCallout(view: view),
+            let calloutID = found.calloutID {
+            if out == nil || out?.calloutID?.compare(calloutID) == .orderedDescending {
                 out = found
             }
         }
@@ -227,14 +234,19 @@ private func presentCallout(view: UIView) -> UIView? {
 extension UIViewController {
     
     func presentCallouts() {
-        if let found = Workbench.presentCallout(view: view!) {
+        guard view != nil else {
+            return
+        }
+        if let found = Workbench.presentCallout(view: view!),
+            let calloutID = found.calloutID,
+            let calloutString = found.calloutString {
             var calloutList: [String] = []
             if let list = UserDefaults.standard.object(forKey: "CalloutList") as? [String] {
                 calloutList = list
             }
-            calloutList.append(found.calloutID!)
+            calloutList.append(calloutID)
             UserDefaults.standard.set(calloutList, forKey: "CalloutList")
-            CalloutView.makeCallout(string: Strings.lookup(string: found.calloutString!),
+            CalloutView.makeCallout(string: Strings.lookup(string: calloutString),
                                     target: found,
                                     viewController: self)
         }
