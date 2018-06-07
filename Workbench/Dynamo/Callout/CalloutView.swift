@@ -72,6 +72,16 @@ extension UIView {
         set {
         }
     }
+    
+    fileprivate func isShowingCallout() -> Bool {
+        for view in self.subviews {
+            if view.isKind(of: CalloutView.self) {
+                return true
+            }
+        }
+        return false
+    }
+
 }
 
 class CalloutView: UIView {
@@ -232,6 +242,10 @@ private func presentCallout(view: UIView) -> UIView? {
 }
 
 extension UIViewController {
+    
+    func isShowingCallout() -> Bool {
+        return view.isShowingCallout()
+    }
     
     func presentCallouts() {
         guard view != nil else {

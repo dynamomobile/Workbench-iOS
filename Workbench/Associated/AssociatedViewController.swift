@@ -49,10 +49,6 @@ class AssociatedViewController: UIViewController {
         ])
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        presentCallouts()
-    }
-    
     func dummy() -> Dummy {
         if let dummy = self.associatedObjects?["dummy"] as? Dummy {
             return dummy

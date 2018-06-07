@@ -9,7 +9,8 @@ class MainViewController: UICollectionViewController {
         ("title_associated", "associated", "blue", "white"),
         ("title_statemachine", "statemachine", "yellow", "black"),
         ("title_qrtest", "qrtest", "magenta", "white"),
-        ("title_csv", "csv", "orange", "white")
+        ("title_csv", "csv", "orange", "white"),
+        ("title_callout", "callout", "brown", "white")
     ]
 
     override func viewDidLoad() {

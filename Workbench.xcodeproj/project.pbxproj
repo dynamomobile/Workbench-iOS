@@ -49,6 +49,7 @@
 		3AD5F63B1FDAC5FD00EC5EAF /* UIViewController+Context.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD5F6371FDAC5FD00EC5EAF /* UIViewController+Context.m */; };
 		3AEF9B1220B9A4FE00F46602 /* CalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEF9B1120B9A4FE00F46602 /* CalloutView.swift */; };
 		3AEF9B1420B9A52C00F46602 /* CalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEF9B1320B9A52C00F46602 /* CalloutView.xib */; };
+		3AEF9B2920C8A59E00F46602 /* CalloutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEF9B2820C8A59E00F46602 /* CalloutViewController.swift */; };
 		3AF884122003C5E8009900B7 /* ResponseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF884112003C5E7009900B7 /* ResponseButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,7 @@
 		3AE778652045F4D3005393BC /* tryExceptionBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tryExceptionBlock.h; sourceTree = "<group>"; };
 		3AEF9B1120B9A4FE00F46602 /* CalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutView.swift; sourceTree = "<group>"; };
 		3AEF9B1320B9A52C00F46602 /* CalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalloutView.xib; sourceTree = "<group>"; };
+		3AEF9B2820C8A59E00F46602 /* CalloutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutViewController.swift; sourceTree = "<group>"; };
 		3AF884112003C5E7009900B7 /* ResponseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -244,6 +246,7 @@
 				3A487FE4200511200047C354 /* Associated */,
 				3A487FE5200511310047C354 /* StateMachine */,
 				3A3E0373201641CD008C72CE /* QRTest */,
+				3AEF9B2720C8A18100F46602 /* Callout */,
 				3A7AB5A02047FF9C002B3F14 /* CSV */,
 				3AD4C5361FB1F383005353C9 /* LaunchScreen.storyboard */,
 				3AD4C5311FB1F383005353C9 /* Main.storyboard */,
@@ -300,6 +303,14 @@
 			children = (
 				3AEF9B1320B9A52C00F46602 /* CalloutView.xib */,
 				3AEF9B1120B9A4FE00F46602 /* CalloutView.swift */,
+			);
+			path = Callout;
+			sourceTree = "<group>";
+		};
+		3AEF9B2720C8A18100F46602 /* Callout */ = {
+			isa = PBXGroup;
+			children = (
+				3AEF9B2820C8A59E00F46602 /* CalloutViewController.swift */,
 			);
 			path = Callout;
 			sourceTree = "<group>";
@@ -418,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A3D5AB31FED438900E5AAFF /* StateMachineViewController.swift in Sources */,
+				3AEF9B2920C8A59E00F46602 /* CalloutViewController.swift in Sources */,
 				3A3E037520164317008C72CE /* QRTestViewController.swift in Sources */,
 				3AD5F6391FDAC5FD00EC5EAF /* UIView+Context.m in Sources */,
 				3A0BA1851FE1319D004CB22F /* MainViewController.swift in Sources */,

@@ -275,7 +275,6 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="design" value="red:white"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="designTitle" value="button_down"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="roundedCornerRadius" value="buttonCornerRadius"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="callout" value="this:lorem ipsum"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="down:" destination="sfT-2J-QYl" eventType="touchUpInside" id="NHE-JL-Cit"/>
@@ -677,6 +676,7 @@
                         <segue destination="sfT-2J-QYl" kind="show" identifier="associated" id="vRe-5d-pdw"/>
                         <segue destination="5Nu-SB-MIN" kind="show" identifier="qrtest" id="cF3-ab-jUY"/>
                         <segue destination="Cq0-Ou-2dS" kind="show" identifier="csv" id="36b-w7-65o"/>
+                        <segue destination="knX-DD-J2z" kind="show" identifier="callout" id="1ww-fI-Nny"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S3r-et-IEI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -975,6 +975,63 @@
                 <exit id="SRQ-V4-B8U" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="44.927536231884062" y="2470.9239130434785"/>
+        </scene>
+        <!--Callout View Controller-->
+        <scene sceneID="K0O-Oa-8iY">
+            <objects>
+                <viewController id="knX-DD-J2z" userLabel="Callout View Controller" customClass="CalloutViewController" customModule="Workbench" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qFn-Jw-Pa1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rc7-zZ-dKf">
+                                <rect key="frame" x="20" y="20" width="46" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="ArZ-lH-NdJ"/>
+                                    <constraint firstAttribute="height" constant="44" id="B4g-yh-RMS"/>
+                                </constraints>
+                                <state key="normal" title="⨉"/>
+                                <connections>
+                                    <segue destination="4sN-yb-NHv" kind="unwind" unwindAction="unwindToMainViewControllerWithSegue:" id="8zk-B1-QeU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsd-qk-MKU">
+                                <rect key="frame" x="183" y="32" width="48" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="designTitle" value="title_callout"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="callout" value="01_title:callout_title"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hf-IS-fem">
+                                <rect key="frame" x="158" y="96" width="99" height="30"/>
+                                <state key="normal" title="Reset Callouts"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="callout" value="02_reset:callout_reset"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="resetPressed:" destination="knX-DD-J2z" eventType="touchUpInside" id="ofv-dK-EsY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9hf-IS-fem" firstAttribute="centerX" secondItem="qFn-Jw-Pa1" secondAttribute="centerX" id="BLQ-xo-KNS"/>
+                            <constraint firstItem="rc7-zZ-dKf" firstAttribute="leading" secondItem="crr-08-vP0" secondAttribute="leading" constant="20" id="EoS-ft-sDQ"/>
+                            <constraint firstItem="9hf-IS-fem" firstAttribute="top" secondItem="qsd-qk-MKU" secondAttribute="bottom" constant="40" id="FPq-LC-fy5"/>
+                            <constraint firstItem="rc7-zZ-dKf" firstAttribute="top" secondItem="crr-08-vP0" secondAttribute="top" id="KYf-29-xQJ"/>
+                            <constraint firstItem="qsd-qk-MKU" firstAttribute="centerX" secondItem="qFn-Jw-Pa1" secondAttribute="centerX" id="TGD-Hm-F5S"/>
+                            <constraint firstItem="qsd-qk-MKU" firstAttribute="top" secondItem="crr-08-vP0" secondAttribute="top" constant="12" id="rgc-4H-Pzw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="crr-08-vP0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HFI-06-SzH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="4sN-yb-NHv" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-1001" y="2530"/>
         </scene>
     </scenes>
 </document>
