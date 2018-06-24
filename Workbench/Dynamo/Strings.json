@@ -13,6 +13,7 @@
     "button_empty": "Empty",
     "title_ppl_in_space": "People in Space",
     "callout_title": "This is the page title.",
+    "callout_close": "This button closes this page.",
     "callout_reset": "This button reset callouts to be shown again.",
     "event_a": "Go to state Running on Event A",
     "event_b": "Go to state Start on Event B",

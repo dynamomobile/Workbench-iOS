@@ -991,6 +991,9 @@
                                     <constraint firstAttribute="height" constant="44" id="B4g-yh-RMS"/>
                                 </constraints>
                                 <state key="normal" title="⨉"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="callout" value="02_close:callout_close"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="4sN-yb-NHv" kind="unwind" unwindAction="unwindToMainViewControllerWithSegue:" id="8zk-B1-QeU"/>
                                 </connections>
@@ -1009,7 +1012,7 @@
                                 <rect key="frame" x="158" y="96" width="99" height="30"/>
                                 <state key="normal" title="Reset Callouts"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="callout" value="02_reset:callout_reset"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="callout" value="03_reset:callout_reset"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="resetPressed:" destination="knX-DD-J2z" eventType="touchUpInside" id="ofv-dK-EsY"/>
