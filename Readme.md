@@ -70,3 +70,7 @@ _The word **QR Code** is registered trademark of DENSO WAVE INCORPORATED [FAQ](h
 ## CSV
 
 CSV is a small demo of using a Google Sheet to supply some data for the app. There is also a second usage of a Google Sheet supplied CSV file. Actually the second tab from the same sheet, which is used at compile time in a build phase step.
+
+## Callout
+
+Callout is a small demo showing information callouts for the things on a page. The are created via a Callout propety in InterfaceBuilder. The field should contain a string with two part seperated by a colon. Before the colon there can be an id token which is used to track which callouts has already been presented. After the colon there can be the string, or a string lookup key to be used as the callout text.
