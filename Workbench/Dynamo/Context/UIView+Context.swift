@@ -47,7 +47,7 @@ extension UIView {
         if let vc = objc_getAssociatedObject(self, UIView.viewControllerKey) as? UIViewController,
             let parentViewController = objc_getAssociatedObject(self,
                                                                 UIView.parentViewControllerKey) as? UIViewController {
-            parentViewController.addChildViewController(vc)
+            parentViewController.addChild(vc)
             addSubview(vc.view)
             vc.viewDidLoad()
             objc_removeAssociatedObjects(self)
@@ -74,7 +74,7 @@ extension UIView {
             if self.isKind(of: UITableView.self),
                 let tableView = self as? UITableView,
                 let newValue = newValue {
-                var parts = newValue.components(separatedBy: "|")
+                let parts = newValue.components(separatedBy: "|")
                 let key = parts[0]
                 let extra = parts.count > 1 ? parts[1] : nil
                 let cellIdentifier = extra ?? "Cell"
@@ -91,7 +91,7 @@ extension UIView {
                 control.wb_contextSliderUpdate(control)
             }
             if self.isKind(of: UITextView.self) {
-                let proto = NotificationCenter.default.addObserver(forName: .UITextViewTextDidChange,
+                let proto = NotificationCenter.default.addObserver(forName: UITextView.textDidChangeNotification,
                                                                    object: self,
                                                                    queue: nil) { (notification) in
                     if let textView = notification.object as? UITextView,
@@ -107,7 +107,7 @@ extension UIView {
                                          .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             }
             if self.isKind(of: UITextField.self) {
-                let proto = NotificationCenter.default.addObserver(forName: .UITextFieldTextDidChange,
+                let proto = NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification,
                                                                    object: self,
                                                                    queue: nil) { (notification) in
                     if let textField = notification.object as? UITextField,
@@ -133,7 +133,7 @@ extension UIView {
         guard let context = context else {
             return
         }
-        var parts = context.components(separatedBy: "|")
+        let parts = context.components(separatedBy: "|")
         guard parts.count > 0 else {
             return
         }

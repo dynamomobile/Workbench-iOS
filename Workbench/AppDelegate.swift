@@ -6,7 +6,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         if let app_name = Bundle.main.infoDictionary?["CFBundleName"] as? String {
             UIView.setFullContext([
@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // codestep-7A806A89-162F-44C6-8472-54A7627F0825 Application Open URL
     func application(_ app: UIApplication,
                      open url: URL,
-                     options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
+                     options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
 
         // codestep-186B9FFD-7B58-4737-83F1-2037D80F0112 URL Scheme Config
         // This is the entry point to decode a qr code/url scheme

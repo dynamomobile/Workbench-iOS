@@ -51,8 +51,8 @@ func csvReadLookup(string: String, keyName: String, valueName: String) -> [Strin
     var dictionary: [String: String] = [:]
     if lines.count > 1 {
         let titles = csvReadLine(lines[0])
-        if let keyIndex = titles.index(of: keyName),
-            let valueIndex = titles.index(of: valueName) {
+        if let keyIndex = titles.firstIndex(of: keyName),
+            let valueIndex = titles.firstIndex(of: valueName) {
             for i in 1..<lines.count {
                 let values = csvReadLine(lines[i])
                 dictionary[values[keyIndex]] = values[valueIndex]

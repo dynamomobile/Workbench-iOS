@@ -34,7 +34,7 @@ extension UIView {
                 if newValue.contains(":") {
                     let components = newValue.components(separatedBy: ":")
                     button.backgroundColor = UIColor.colorBy(name: components[0])
-                    button.setTitleColor(UIColor.colorBy(name: components[1]), for: UIControlState.normal)
+                    button.setTitleColor(UIColor.colorBy(name: components[1]), for: UIControl.State.normal)
                 } else {
                     button.backgroundColor = UIColor.colorBy(name: newValue)
                 }

@@ -80,7 +80,7 @@ class AnimatedCheckmarkView: UIView {
         animation.fromValue = 0.0
         animation.toValue = 1.0
         animation.duration = CFTimeInterval(duration)
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         checkmarkLayer.add(animation, forKey: "strokeEnd")
 
         checkmarkLayer.path = getCheckmarkPath().cgPath
