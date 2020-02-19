@@ -41,7 +41,13 @@ class MainViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let (_, segue, _, _) = buttons[indexPath.row]
-        if let exception = tryExceptionBlock({ self.performSegue(withIdentifier: segue, sender: self) }) {
+        if let cell = collectionView.cellForItem(at: indexPath),
+            let exception = tryExceptionBlock({
+                DispatchQueue.main.async {
+                    cell.isSelected = false
+                }
+            self.performSegue(withIdentifier: segue, sender: self)
+        }) {
             print("\(exception)")
         }
     }

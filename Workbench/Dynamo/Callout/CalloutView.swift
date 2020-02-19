@@ -57,8 +57,7 @@ extension UIView {
             }
             return nil
         }
-        set {
-        }
+        set { _ = newValue }
     }
 
     var calloutString: String? {
@@ -69,8 +68,7 @@ extension UIView {
             }
             return nil
         }
-        set {
-        }
+        set { _ = newValue }
     }
     
     fileprivate func isShowingCallout() -> Bool {
@@ -89,7 +87,7 @@ class CalloutView: UIView {
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var backView: UIView!
     
-    let shadowRadius = CGFloat(8)
+    let shadowRadius = CGFloat(4)
     let horizontalMargin = CGFloat(20)
     let verticalMargin = CGFloat(8)
     let pointWidth = CGFloat(15)
@@ -182,7 +180,7 @@ class CalloutView: UIView {
         layer.shadowRadius = shadowRadius
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 2)
-        layer.shadowOpacity = 0.4
+        layer.shadowOpacity = 0.2
         layer.shouldRasterize = true
     }
     
